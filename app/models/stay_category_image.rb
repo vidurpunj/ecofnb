@@ -1,0 +1,2 @@
+class StayCategoryImage < ApplicationRecord
+end

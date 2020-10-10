@@ -1,0 +1,85 @@
+<%if @merchant.errors.any?%>
+<% resource = @merchant%>
+<%else%>
+<% resource = Merchant.new%>
+<% end -%>
+<% resource_name = :merchant%>
+
+<div class="container-fluid no-left-padding no-right-padding page-banner signup-banner">
+   <!-- Container -->
+   <div class="container">
+      <h3 class="tc_white">Partner Sign Up</h3>
+      <ol class="breadcrumb">
+        <!--  <li class="active tc_white">Partner Sign Up</li> -->
+      </ol>
+   </div>
+   <!-- Container /- -->
+</div>
+<!-- Page Banner /- -->
+<main class="site-main">
+   <!-- SignUp Form -->
+   <div class="container-fluid no-left-padding no-right-padding signup-section">
+   <!-- Container -->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-offset-1 col-md-10">
+            <div class="signup-form">
+
+                <div class="col-md-6">
+                  <%= link_to "/merchants/auth/google_oauth2", class:"btn btn-block btn-social btn-google" do %>
+                     <span class="fa fa-google"></span> Sign UP with Google+
+                  <% end %>
+               </div>
+               <div class="col-md-6">
+                  <%= link_to "/merchants/auth/facebook", class:"btn btn-block btn-social btn-facebook" do %>
+                      <span class="fa fa-facebook"></span> Sign up with Facebook
+                  <% end %>
+                 </div>
+               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+               <%= render "merchants/shared/error_messages", resource: @merchant %>
+
+               <div class="form-group col-md-6">
+                  <%= f.label :email %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Email",required: :true  %>
+                  
+               </div>
+               <div class="form-group col-md-6">
+                  <%= f.label :name %>
+                  <%= f.text_field :name, autofocus: true, autocomplete: "name", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Name",required: :true  %>
+               </div>
+               <div class="form-group col-md-6">
+                  <%= f.label :mobile %>
+                  <%= f.text_field :mobile, autofocus: true, autocomplete: "mobile", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Mobile",required: :true  %>
+               </div>
+               <div class="form-group col-md-6">
+                  <%= f.label :address %>
+                  <%= f.text_field :address, autofocus: true, autocomplete: "address", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Address",required: :true  %>
+               </div>
+               <div class="form-group col-md-6">
+                  <%= f.label :password %>
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autofocus: true, autocomplete: "new-password", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Password",required: :true   %>
+               </div>
+               <div class="form-group col-md-6">
+                  <%= f.label :password_confirmation %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password" ,:class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Password",required: :true  %>
+               </div>
+               <div class="form-group col-md-12 tc_dark">
+                  <div class="form-group col-md-12 signup-btn">
+                     <input type="submit" value="Singup Now" class="bg_green bg_black_h tc_white" />
+                  </div>
+                  <%end%>
+                  <div class="form-group col-md-12" style="text-align: center;margin-top: 10px;">
+                   Already have an Ecofnb account? <a href="<%=new_merchant_session_path%>">Log in</a>
+                </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Container /- -->
+   </div>
+   <!-- SignUp Form /- -->
+</main>
+<%#= render "devise/shared/links" %>

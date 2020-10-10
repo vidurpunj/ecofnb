@@ -1,0 +1,170 @@
+ <footer id="footer-main" class="container-fluid no-left-padding no-right-padding footer-main">
+   <!-- Top Footer -->
+   <div class="container-fluid no-left-padding no-right-padding top-footer vijay">
+      <!-- Container -->
+      <div class="container">
+         <!-- Row -->
+         <div class="row">
+            <!-- Widget About -->
+            <div class="col-md-4 col-sm-6 col-xs-6">
+
+              <aside class="widget widget_contact">
+                  <h3 class="widget-title">Contact us</h3>
+                  <p><i class="fa fa-map-marker"></i>Jagannath Complex, First Floor, Nainital Road Haldwani</p>
+                  <p><i class="fa fa-mobile"></i><a href="tel:+917078877002"> (+91) 7078877002</a></p>
+                  <p><i class="fa fa-envelope"></i><a href="mailto:youremail@mail.com">info@ecofnb.com</a></p>
+                  <p><i class="fa fa-internet-explorer"></i><a target="_blank" href="http://www.ecofnb.com">www.ecofnb.com</a></p>
+              </aside>
+
+                  <aside class="widget widget_social">
+                     <ul>
+                        <li><a href="https://www.facebook.com/Ecofnb-1591258727642130/?modal=admin_todo_tour" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/ecofnb" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/ecofnb/" target="_blank"><i class="fa fa-instagram" ></i></a></li>
+                        <li>
+                           <a href="https://www.youtube.com/channel/UC8rgXc5jzlLGIZyDbg2vYBg
+                              "target="_blank"><i class="fa fa-youtube"></i></a>
+                        </li>
+                     </ul>
+                  </aside>
+              
+            </div>
+            <!-- Widget About /- -->
+            <!-- Widget Links -->
+            <div class="col-md-4 col-sm-6 col-xs-6">
+              <aside class="widget widget_latestposts">
+                  <h3 class="widget-title">Latest Blog</h3>
+                  <%@latest_post.each do |r_post|%>
+                     <div class="latest-content">
+                        <a href="<%=blog_path(r_post)%>" title="<%= r_post.title %>"><i><img src="<%=r_post.image.url(:thumb)%>" class="wp-post-image" alt="blog-1" style="width: 90 ;height: 40px;"></i></a>
+                        <h5><a class="tc_dark tc_green_h" title="<%= r_post.title %>" href="<%=blog_path(r_post)%>"><%= r_post.title %> </a></h5>
+                     </div>
+                  <%end%>
+               </aside>
+
+            </div>
+            <!-- Widget Links /- -->
+            <!-- Widget Latest Post -->
+            <div class="col-md-4 col-sm-6 col-xs-6">
+               
+            </div>
+            <!-- Widget Latest Post -->
+            <!-- Widget Tags -->
+            <div class="col-md-3 col-sm-6 col-xs-6">
+               <aside class="widget widget_latestposts">
+                  <h3 class="widget-title">Latest Partners</h3>
+                  <% @latest_stay.each do |latest_stay| %>
+                  <div class="latest-content">
+                     <a href="<%= stay_path(latest_stay)%>" title="<%latest_stay.stay_title%>"><i><img src="<%=latest_stay.stay_images.first.stay_image.url%>" class="wp-post-image" alt="blog-1" style="width: 90 ;height: 40px;"></i></a>
+                        <h5><a class="tc_dark tc_green_h" title="<%= latest_stay.stay_title %>" href="<%= stay_path(latest_stay)%>"><%= latest_stay.stay_title %> </a></h5>
+                   </div>
+                     <% end %>
+               </aside>
+            </div>
+            <!-- Widget Tags /- -->
+         </div>
+         <!-- Row /- -->
+      </div>
+      <!-- Container /- -->
+   </div>
+   <!-- Top Footer -->
+   <!-- Bottom Footer -->
+   <div class="container-fluid bottom-footer">
+      <!-- Container -->
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-7">
+            <div class="footer-links text-center">
+              <ul>
+                <li><a href="/ecofnb/about">About us</a> |</li>
+                <li><a href="/ecofnb/founder_message">Founder Message</a> |</li>
+                <li><%= link_to "Terms & Conditions", asset_path("term_condition.pdf") %> |</li>
+                <li><%= link_to "Privacy Policy", asset_path("PRIVACY_POLICY.pdf") %> |</li>
+                <li><a href="<%= new_contact_path%>">Contact us</a> |</li>
+                <li><a href="<%= faqs_path%>">Faqs</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="powered-by pull-right">
+             <p><span class="design-by">Design By</span> <a href="http://www.ryientsoft.com/" target="_blank">RyientSoft Technology</a></p> 
+          </div>
+          </div>
+        </div>
+         <!--Start of Tawk.to Script-->
+         <!-- <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/5c57c53e7cf662208c93e8b9/default';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+         </script>
+ -->
+         <!--End of Tawk.to Script-->
+      </div>
+      <!-- Container -->
+   </div>
+   <!-- Bottom Footer /- -->
+</footer>
+<!-- Footer Main /- -->
+<!-- JQuery v1.12.4 -->
+<!-- Library - Js -->
+<style type="text/css">
+    .footer-bitt{
+      float: right;
+    /* padding-bottom: 17px; */
+     letter-spacing: 1.4px;
+    padding-top: 15px;
+    color: #fff
+   }
+   .footer-bitt  a{
+      color: #01c26e!important;
+      letter-spacing: 1.4px;
+   }
+
+</style>
+<style>
+/*.vijay {
+  background-image: url("<%#=asset_path('footer-bg1.jpg')%>");
+  width: 100%;
+  height: auto;
+  background-size: 100% 100%;
+  background-position: center center;
+  opacity: 1;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}*/
+
+.footer-links ul {
+    list-style-type: none;
+}
+
+.footer-links ul li {
+    display: inline-block;
+        color: #fff;
+
+}
+.footer-links ul li a
+ {
+  color: #01c26e;
+  letter-spacing: 0.5px;
+  
+ }
+ span.design-by {
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+.powered-by p a {
+    color: #01c26e;
+    letter-spacing: 0.5px;
+}
+.powered-by p
+{
+  padding: 0 10px;
+  
+}
+</style>

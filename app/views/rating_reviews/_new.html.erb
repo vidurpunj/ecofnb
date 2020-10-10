@@ -1,0 +1,104 @@
+     <div id="review-rating">
+         <%= form_for :rating_reviews, url: rating_reviews_path(stay_home_id: @stay_home_id),  method: :post do |f| %>
+            <div class="row">
+                <div class="col-sm-12">    
+                    <div class="form-group" id="section2">
+                        <h3><%= f.label "Rating" %></h3>
+                        <%= f.hidden_field :rating, class:"form-control live-rating", :required => true, value: @rating_review.rating  %>
+                        <%= f.hidden_field :rating_review_id, value: @rating_review.id%>
+                        <div class="my-rating"></div>
+                    </div>    
+                </div>
+                <div class="col-sm-12">    
+                    <div class="form-group">
+                        <h3><%= f.label "Title" %></h3>
+                        <%= f.text_field :title, class:"form-control", value: @rating_review.title  %>
+                    </div>
+                </div>
+
+                <div class="col-sm-12">    
+                    <div class="form-group">
+                        <h3><%= f.label "Review" %></h3>
+                        <%= f.text_area :review, class:"form-control", rows:"8", :required => true, value: @rating_review.review  %>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <%# if @rating_review.new_record? %>
+                      <%= f.submit "Add Review", class:"btn btn-primary btn float-right" %>
+                    <%# else %>
+                       <%#= f.submit "Update Review", class:"btn btn-primary btn float-right" %>
+                    <%# end %>
+                </div>
+            </div>
+        <% end %>
+     </div>
+
+ <script type="text/javascript">
+   // $('#review-rating').hide()
+   $('.show-review').on('click', function () {
+      $('#review-rating').show()
+   })
+   $(".my-rating").starRating({
+     initialRating: '<%= @rating_review.display_rating %>',
+     disableAfterRate: false,
+     onHover: function(currentIndex, currentRating, $el){
+       $('.live-rating').text(currentIndex);
+     },
+     onLeave: function(currentIndex, currentRating, $el){
+       $('.live-rating').val(currentRating*2);
+       console.log(currentRating*2)
+     }
+   });
+ </script>
+
+
+ <style>
+     .jq-stars {
+  display: inline-block;
+}
+
+.jq-rating-label {
+  font-size: 22px;
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  font-family: helvetica, arial, verdana;
+}
+
+.jq-star {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.jq-star-svg {
+  padding-left: 3px;
+  width: 100%;
+  height: 100% ;
+}
+
+.jq-star:hover .fs-star-svg path {
+}
+
+.jq-star-svg path {
+  /* stroke: #000; */
+  stroke-linejoin: round;
+}
+
+/* un-used */
+.jq-shadow {
+  -webkit-filter: drop-shadow( -2px -2px 2px #888 );
+  filter: drop-shadow( -2px -2px 2px #888 );
+}
+.show-avg-rating {
+  float: left;
+  margin-right: 45px;
+}
+
+
+ </style>

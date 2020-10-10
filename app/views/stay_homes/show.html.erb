@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row">
+<div class="col-md-12 ">
+<div class="panel panel-default">
+  <div class="panel-heading">  <h4 ><%= @stay_home.stay_name %> Information</h4></div>
+   <div class="panel-body">
+       
+    <div class="box box-info">
+        
+            <div class="box-body">
+              <div class="row">
+                  <div class="col-sm-6">
+                      <div class="flexslider">
+                         <ul class="slides">
+                         <% @stay_home.stay_images.each do |stayimage| %>
+                       <li>
+                         <img src="<%= stayimage.stay_image.url %>" alt="<%= @stay_home.stay_name%>room image" class="stayimageheight" />
+                       </li>
+                         <% end %>
+                     </ul>
+                      </div>
+                      <br>
+                  </div>
+                   <div class="col-md-6"> 
+                    <div id="map"></div>
+                    <%= render 'maps/map', map_type: @stay_home,  map_class: 'stay_home', map_draggable: false, latitude: @stay_home.latitude, longitude: @stay_home.longitude %>
+                  </div>
+                </div>
+    
+        <div class="row">
+            <div class="col-md-6 border">
+               <p>
+                  <strong>Stay Name:</strong>
+                  <%= @stay_home.stay_name %>
+               </p>
+               <p>
+                  <strong>Stay Title</strong>
+                  <%= @stay_home.stay_title %>
+               </p>
+               <p>
+                  <strong>Stay price</strong>
+                  <%= @stay_home.stay_price %>
+               </p>
+               <p>
+                  <strong>Stay Categories</strong>
+                  <%= @stay_home.stay.name %>
+               </p>
+               <p>
+                  <strong>Address:</strong>
+                  <%= raw @stay_home.address %>
+               </p>
+               <p>
+                  <strong>Stay_Facilities</strong>
+                  <% @stay_home.stayhome_facilities.each do |stay_fa| %>
+                  <%=  stay_fa.facility.name %>
+                  <% end %>
+               </p>
+               <p>
+                  <strong>Stay Status</strong>
+                  <%= StayHome::STATUS[@stay_home.status].to_s %> 
+               </p>
+            </div>
+             <div class="col-md-6 border"> 
+                <p>
+                  <strong>Stay description:</strong>
+                  <%= raw @stay_home.description %>
+               </p>
+
+         </div>
+          </div>
+     </div>  
+      </div> 
+    </div> 
+    </div>
+  </div>  
+   </div>
+</div>
+
+
+ <style type="text/css">
+   #map {
+   height: 300px;
+   width: 100%;
+   } 
+
+  #profile-image1 {
+      cursor: pointer;
+    
+       width: 100px;
+      height: 100px;
+    border:2px solid #03b1ce ;}
+    .tital{ font-size:16px; font-weight:500;}
+     .bot-border{ border-bottom:1px #f8f8f8 solid;  margin:5px 0  5px 0}  
+ </style>

@@ -1,0 +1,157 @@
+<header class="header_s header_s1">
+   <!-- SidePanel -->
+   <div id="slidepanel">
+      <!-- Top Header -->
+      <div class="container-fluid no-right-padding no-left-padding top-header brd_color_green">
+         <!-- Container -->
+         <div class="container mng-width">
+            <div class="top-left tcp_gray">
+               <p><i class="fa fa-home"></i>Jagannath Complex, First Floor, Nainital Road, Haldwani</p>
+               <p><i class="fa fa-phone tc_gray"></i> 7078877002</p>
+              
+            </div>
+            <div class="top-right">
+              <% if merchant_signed_in? %>
+                <p><i class="fa fa-user tc_dark"></i><a class="tc_dark tc_green_h" href="<%=merchant_index_path%>" title="Signup">Dashboard</a></p>
+                      <p><i class="fa fa-key tc_dark"></i><%= link_to "Sign out Partner", destroy_merchant_session_path,:class => "tc_dark tc_green_h", :method => :get %>
+                      <% else %>
+                        <% if user_signed_in? %>
+                        <div class="dropdown">
+                          <!-- <button onclick="myFunction()" class="fa fa-user">Dropdown</button> -->
+                          <button style="font-size:20px"><i class="fa fa-user" onclick="myFunction()"></i></button>
+                       <!--   <i class="fa fa-user-circle" onclick="myFunction()"></i> -->
+                          <div id="myDropdown" class="dropdown-content">
+                            <a href="/bookings">My Bookings</a>
+                            <a href="/profile/guest_profile">My Profile</a>
+                            <a href="/ecofnb/support">24x7 support</a>
+                            <a href="<%=faqs_path%>">FAQ</a>
+                           <%= link_to "Logout", destroy_user_session_path, :method => :get %>
+                          </div>
+                        </div>
+                     <!--  <p><i class="fa fa-key tc_dark"></i> --><%#= link_to "Sign out Guest", destroy_user_session_path,:class => "tc_dark tc_green_h", :method => :delete %>
+                    <% else %>
+                     <p><i class="fa fa-user tc_dark"></i><a class="tc_dark tc_green_h" href="<%=new_merchant_session_path%>" title="Partner Login">Partner</a></p>
+                         <p><i class="fa fa-key tc_dark"></i><a class="tc_dark tc_green_h" href="<%= new_user_session_path%>" title="Guest Login">Guest</a></p>
+                       
+               <% end %>
+               <% end %>
+               <!-- <ul>
+                  <li><a class="tc_dark tc_sugar_h bg_green_h" href="https://www.facebook.com/Ecofnb-1591258727642130/?modal=admin_todo_tour" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                  <li><a class="tc_dark tc_sugar_h bg_green_h" target="_blank" href="https://twitter.com/Ecofnb1"><i class="fa fa-twitter"></i></a></li>
+                  <li><a class="tc_dark tc_sugar_h bg_green_h" target="_blank" href="https://plus.google.com/u/1/113106467864886857517"><i class="fa fa-google-plus"></i></a></li>
+                  <li><a class="tc_dark tc_sugar_h bg_green_h" target="_blank" href="https://www.facebook.com/eco.fnb.98/about?section=overview&info_surface=intro_card&lst=100030543525272%3A100030543525272%3A1543393825
+                     "><i class="fa fa-instagram"></i></a></li>
+                  <li><a class="tc_dark tc_sugar_h bg_green_h" target="_blank" href="https://www.youtube.com/channel/UC8rgXc5jzlLGIZyDbg2vYBg"><i class="fa fa-youtube"></i></a></li>
+               </ul> -->
+
+
+            
+            </div>
+         </div>
+         <!-- Container /- -->
+      </div>
+      <!-- Top Header /- -->
+   </div>
+   <!-- SidePanel /- -->
+   <!-- Ownavigation -->
+   <nav class="navbar ownavigation bg_black menu_color">
+      <!-- Container -->
+      <div class="container1">
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/"><img src="<%= asset_path("ecofnblogo/logo121.png")%>" alt="logo" height="180" width="180"></a>
+         </div>
+         <div class="donation-btn">
+<!--             <a class="bg_green tc_white tc_green_h bg_white_h" href="/ecofnb/all_stay_homes" title="Book Now">Book Now</a> -->
+         </div>
+         <div class="search">
+            <a href="javascript:void(0);" id="search" title="Search"><i class="fa fa-search"></i></a>
+         </div>
+         <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+               <li class="active"><a href="/">home</a></li>
+               <li class=""><a href="/ecofnb/about">about us</a></li>
+               <li class=""><a href="/ecofnb/founder_message">founder Message</a></li>
+
+               <li class="dropdown">
+                  <a href="#" class="" role="button" aria-haspopup="true" aria-expanded="false">stays</a>
+                  <i class="ddl-switch fa fa-angle-down"></i>
+                  <ul class="dropdown-menu">
+                  <% if @stay_categories.any? %>   
+                     <%@stay_categories.each do |s_categories|%>
+                        <li><a href="/Stay/<%=s_categories.slug%>"><%=s_categories.try(:name)%></a></li>
+                        <!-- <li><a href="/galleries/video">Video</a></li> -->
+                        <% end -%>
+                  <% end -%>
+               </ul>
+               </li>
+               
+               <!-- <li class=""><a href="/ecofnb/homestay">stay</a></li> -->
+               <li class="dropdown">
+                  <a href="#" class="" role="button" aria-haspopup="true" aria-expanded="false">Gallery</a>
+                  <i class="ddl-switch fa fa-angle-down"></i>
+                  <ul class="dropdown-menu">
+                     <li><a href="/galleries">Gallery</a></li>
+                     <li><a href="/galleries/video">Video</a></li>
+                  </ul>
+               </li>
+               <li><a href="<%=blogs_path%>">Blog</a></li>
+               <!-- <li class="dropdown">
+                  <a href="#" class="" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+                  <i class="ddl-switch fa fa-angle-down"></i>
+                  <ul class="dropdown-menu">
+                     <li><a href="<%=blogs_path%>">Blog Post</a></li>
+                  </ul>
+               </li> -->
+               <li class=""><a href="<%= new_contact_path%>">contact us</a></li>
+            </ul>
+         </div>
+         <div id="loginpanel" class="desktop-hide">
+            <div class="right" id="toggle">
+               <a id="slideit" href="#slidepanel"><i class="fo-icons fa fa-inbox"></i></a>
+               <a id="closeit" href="#slidepanel"><i class="fo-icons fa fa-close"></i></a>
+            </div>
+         </div>
+         <!-- Search Box -->
+         <div class="search-box">
+            <span><i class="icon_close"></i></span>
+            <!-- <input type="text" class="form-control" placeholder="Enter a keyword and press enter..." /> -->
+
+              <%= render 'ecofnb/search'%>
+         </div>
+         <!-- Search Box /- -->
+      </div>
+      <!-- Container /- -->
+   </nav>
+   <!-- Ownavigation /- -->
+</header>
+<!-- Header Section /- -->
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>

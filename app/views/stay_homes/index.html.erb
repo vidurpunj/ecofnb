@@ -1,0 +1,60 @@
+<%= render 'merchant/partner'%>
+<div class="card">
+   <!-- SignUp Form -->
+   <div class="container-fluid no-left-padding no-right-padding signup-section">
+      <!-- Container -->
+      <div class="container">
+         <table class="table table-hover datatable table-bordered display responsive no-wrap">
+            <thead>
+               <tr>
+                  <th>Stay Name</th>
+                  <th>stay_title</th>
+                  <th>Categories</th>
+                  <th>status</th>
+                  <th>Add Room</th>
+                  <th>Room listing</th>
+                  <th>View</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+               </tr>
+            </thead>
+            <tbody>
+               <% @stay_homes.each do |st| %>
+               <tr>
+                  <td><%= st.stay_name %></td>
+                  <td><%= st.stay_title %></td>
+                  <td><%= st.stay.name %></td>
+                  <td><%= StayHome::STATUS[st.status].to_s %> </td>
+                  <td><%= link_to 'Add Room', new_room_path(st.id)%>  </td>
+                  <td><%= link_to "Room listing (#{st.rooms.count})", rooms_path(st)%>  </td>
+                  <td><%= link_to 'View', stay_home_path(st) %> </td>
+                  <td><%= link_to 'Edit', edit_stay_home_path(st) %></td>
+                  <td> <%# if(current_user.id == .user_id) %>
+                     <%= link_to 'Destroy', stay_home_path(st),
+                        method: :delete,
+                        data: { confirm: 'Are you sure want to delete?' } %>
+                  </td>
+               </tr>
+               <% end %>
+            </tbody>
+         </table>
+         <br>
+         <br>
+         <div id="navbar" class="collapse navbar-collapse text-center">
+            <% if current_merchant.present? %>
+            <div> <%= link_to "Add New Home Stay", new_stay_home_path, class: "btn bg_green tc_white tc_green_h bg_white_h" %></div>
+            <%#= link_to "Log out", destroy_merchant_session_path, :method => :delete %>
+            <% else %>
+            <%= link_to "Login With Partner", new_merchant_session_path %>
+            <% end %>
+            <% if !current_merchant.present? %><br/>
+            <%= link_to "Signup With Partner", new_merchant_registration_path %> 
+            <%end %>
+         </div>
+      </div>
+   </div>
+</div>
+<script type="text/javascript">
+   $('.datatable').DataTable({
+   });
+</script>

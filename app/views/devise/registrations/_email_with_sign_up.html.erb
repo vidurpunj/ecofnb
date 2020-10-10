@@ -1,0 +1,96 @@
+<!-- Page Banner -->
+
+<div class="container-fluid no-left-padding no-right-padding page-banner signup-banner">
+   <!-- Container -->
+   <div class="container">
+      <h3 class="tc_white">GUEST Sign Up</h3>
+      <!-- <ol class="breadcrumb">
+         <li class="active tc_white">Sign Up</li>
+      </ol> -->
+   </div>
+   <!-- Container /- -->
+</div>
+<!-- Page Banner /- -->
+<main class="site-main">
+   <!-- SignUp Form -->
+   <div class="container-fluid no-left-padding no-right-padding signup-section">
+   <!-- Container -->
+   <div class="container">
+      <div class="row">
+         <div class="btn-group-vertical">
+         <div class="col-md-offset-1 col-md-10">
+            <div class="signup-form">
+               <!-- <div class="social-login">
+                    <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
+                </div>
+                <div class="social-login">
+                    <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
+                </div> -->
+                <div class="col-md-6">
+                  <%= link_to "/auth/google_oauth2", class:"btn btn-block btn-social btn-google" do %>
+                     <span class="fa fa-google"></span> SignUp with Google+
+                  <% end %>
+               </div>
+               <div class="col-md-6">
+                  <%= link_to "/auth/facebook", class:"btn btn-block btn-social btn-facebook" do %>
+                      <span class="fa fa-facebook"></span> SignUp with Facebook
+                  <% end %>
+                 </div> 
+               
+               <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+               <%= devise_error_messages! %>
+               <div class="form-group col-md-6">
+                  <%= f.label :First_name %>
+                  <%= f.text_field :name, autofocus: true, autocomplete: "First Name", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "First Name",required: :true  %>
+               </div>
+                <div class="form-group col-md-6">
+                  <%= f.label :Last_name %>
+                  <%= f.text_field :last_name, autofocus: true, autocomplete: "Last Name", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Last Name",required: :true  %>
+               </div>
+               <div class="form-group col-md-6">
+                  <%= f.label :email %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Email",required: :true  %>
+               </div>
+               <!-- <div class="form-group col-md-6">
+                  <%#= f.label :website %>
+                  <%#= f.text_field :website, autofocus: true, autocomplete: "website", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Website",required: :true  %>
+               </div> -->
+               <div class="form-group col-md-6">
+                  <%= f.label :Mobile %>
+                  <%= f.text_field :phone, autofocus: true, autocomplete: "Mobile ", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Mobile ",required: :true  %>
+               </div>
+               <div class="form-group col-md-6">
+                  <%= f.label :password %>
+                  <% if @minimum_password_length %>
+                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+                  <%= f.password_field :password, autofocus: true, autocomplete: "new-password", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Password",required: :true   %>
+               </div>
+               <div class="form-group col-md-6">
+                  <%= f.label :password_confirmation %><br />
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password" ,:class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Password",required: :true  %>
+               </div>
+               <div class="form-group col-md-12 tc_dark">
+                  <%= f.check_box :terms_of_service %>
+                    I have read  
+                    <%#= asset_path 'ECOFNB PRIVACY POLICY.pdf' %>
+                    <%#= link_to "Ecofnb Privacy", asset_path("ECOFNB_POLICY.pdf"), target: "_blank" %>
+                    <%= link_to "Term & Conditions", asset_path("GUEST_POLICIES.pdf"), target: "_blank" %>
+               </div>
+               <div class="form-group col-md-12 tc_dark">
+                  <div class="form-group col-md-12 signup-btn">
+                     <input type="submit" value="Singup Now" class="bg_green bg_black_h tc_white" />
+                  </div>
+                  <%end%>
+                  <div class="form-group col-md-12" style="text-align: center;margin-top: 10px;">
+                   Already have an Ecofnb account? <a href="<%=new_user_session_path%>">Log in</a>
+                </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Container /- -->
+   </div>
+   <!-- SignUp Form /- -->
+</main>
+<%#= render "devise/shared/links" %>

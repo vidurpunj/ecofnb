@@ -1,0 +1,86 @@
+<!-- Page Banner -->
+<!-- <div class="container-fluid no-left-padding no-right-padding page-banner"> -->
+    <!-- Container -->
+    <!-- <div class="container"> -->
+        <!-- <h3 class="tc_white">Blog </h3> -->
+        <!-- <ol class="breadcrumb"> -->
+            <!-- <li><a class="tc_white tc_white_h" href="/">Home</a></li> -->
+            <!-- <li><a class="tc_white tc_white_h" href="<%=blogs_path%>">Blogs</a></li> -->
+            <!-- <li class="active tc_white">single post</li> -->
+        <!-- </ol> -->
+    <!-- </div>Container /- -->
+<!-- </div>Page Banner /- -->
+<div class=" p100 inner-header scrollpoint sp-effect3">
+  <!-- <a href=""><i class="fa fa-arrow-left fa-4x"></i></a> -->
+  <div class="container">
+    <center>
+      <h1><%= @blog.try(:title)%></h1>
+      <!-- <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/blogs"> Blogs </a></li>
+      </ul> -->
+    </center>
+  </div>
+</div>
+
+<br>
+<main class="site-main scrollpoint sp-effect2">
+    <!-- Blog Single Right Sidebar -->
+    <div class="container-fluid no-left-padding no-right-padding blog-single">
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row">
+                <!-- Content Area -->
+                <div class="col-md-8 col-sm-6 content-area blog-single-curv">
+                    <article class="type-post">
+                        <!-- Entry Cover -->
+                        <div class="entry-cover">
+                            <img src="<%=@blog.image.url(:thumb)%>" alt="Blog" class="img-responsive"/>
+                            <div class="entry-header bg_dark2">
+                              <!-- <h3 class="entry-title tc_white"><%#= @blog.try(:title)%> </h3> -->
+                            </div>
+                        </div><!-- Entry Cover /- -->
+                       
+                        <div class="entry-content brd_color_light_gray tcp_gray2 text-justify">
+                            <%= raw @blog.try(:upper_description) %>
+                            <%= raw @blog.try(:lower_description) %>
+                         
+                        </div><!-- Entry Content /- -->
+                    </article>
+                    <!-- Comment Area -->
+                 
+                </div><!-- Content Area /- -->
+                <!-- Widget Area -->
+                <div class="col-md-4 col-sm-6 col-xs-12 widget-area">
+                    <!-- Widget : Search -->
+                    <aside class="widget widget_search">
+                        <form class="searchform">
+                            <input placeholder="Search Here" class="form-control" required="" type="text" />
+                        </form>
+                    </aside><!-- Widget : Search /- -->
+                    <!-- Widget : Category -->
+                      <%=render 'shared/main_link'%>
+                    <!-- Widget : Category /- -->
+                   
+                    <aside class="widget widget_recentposts scrollpoint sp-effect2">
+                        <div class="widget-title">
+                            <h3 class="tc_dark">Recent POSTS</h3>
+                        </div>
+                        <%@resent_post.each do |r_post|%>
+                            <div class="latest-content">
+
+                                    <a href="<%=blog_path(r_post)%>" title="Recent Posts"><i><img src="<%=r_post.image.url(:thumb)%>" class="wp-post-image" alt="blog-1" style="width: 121px ;height: 100px;"></i></a>
+                                    <h5><a class="tc_dark tc_green_h" title="How can forests help in tourism? " href="<%=blog_path(r_post)%>"><%= r_post.title %> </a></h5>
+                                    <span><i class="fa fa-calendar-check-o tc_green"></i><a class="tc_dove_gray tc_green_h" href="#"><%= r_post.created_at.to_date.strftime("%d %b %Y")%>  </a></span>
+                            </div>
+                            <%end%>
+                       
+                    </aside>
+                </div><!-- Widget Area /- -->
+            </div><!-- Row /- -->
+        </div><!-- Container /- -->
+    </div><!-- Blog Single Right Sidebar /- -->
+
+
+</main>

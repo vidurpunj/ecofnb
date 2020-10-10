@@ -1,0 +1,49 @@
+<%= render 'merchant/partner'%>
+<main class="site-main">
+   <!-- SignUp Form -->
+   <div class="container-fluid no-left-padding no-right-padding signup-section">
+      <!-- Container -->
+      <div class="container">
+         <table class="table table-hover datatable table-bordered display responsive no-wrap">
+            <thead>
+               <tr>
+                  <th>Booking ID</th>
+                  <th>User Name</th>
+                  <th>Price</th>
+                  <th>Booked At</th>
+                  <th>Stay Name</th>
+                  <th>Room number</th>
+                  <th>No of Room</th>
+                  <th>Start Date</th>
+                  <th>Last Date</th>
+               </tr>
+            </thead>
+            <tbody>
+
+               <% @booking_orders.each do |st| %>
+               <%#= byebug %>
+               <tr>
+                  <td><%= st.id %></td>
+                  <td><%= st.user.name %></td>
+                 <td><%= st.payments.last.txn_amount %></td>
+                  <td><%= st.created_at%></td>
+                  <td><%= st.stay_home.stay_name %></td>
+                  <td><% st.booking_rooms.each do |booking_room| %>
+               <span><%= Room.find(booking_room.room_id).name %></span>
+               <% end %></p></td>
+                  <td><%= st.num_of_room %></td>
+                   <td><%= st.start_date %></td>
+                  <td><%= st.last_date %></td>
+               </tr>
+               <% end %>
+            </tbody>
+         </table>
+         <br>
+         <br>
+      </div>
+   </div>
+</main>
+<script type="text/javascript">
+   $('.datatable').DataTable({
+   });
+</script>

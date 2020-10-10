@@ -1,0 +1,82 @@
+<!-- Page Banner -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<div class="container-fluid no-left-padding no-right-padding page-banner signup-banner bookig-banner">
+   <!-- Container -->
+   <div class="container">
+      <h3 class="tc_white">Book Hotel</h3>
+      <ol class="breadcrumb">
+         <li class="active tc_white">Booking Now</li>
+      </ol>
+   </div>
+   <!-- Container /- -->
+</div>
+<!-- Page Banner /- -->
+<main class="site-main">
+   <!-- SignUp Form -->
+  <div class="container-fluid no-left-padding no-right-padding signup-section">
+   <!-- Container -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+          <div class="signup-form">
+            <%= form_for(@booking) do |form| %>
+              <% if flash[:notice] %>
+                <div class="notice"><%= flash[:notice] %>
+                </div>
+              <% end %>
+              <% if flash[:alert] %>
+                <div class="alert" id ="alert"><%= flash[:alert] %>
+                </div>
+              <% end %>
+
+              <div class="form-group col-md-6">
+                <%= form.hidden_field :user_id, :value => current_user.id %>
+                <%= form.hidden_field :stay_home_id, :value => @stay.id %>
+
+                <%= form.label :Check_In %>
+                <%= form.text_field :start_date , required: true, autofocus: true, :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray datepicker",id: "from-datepicker", placeholder: "Checkin Date" %>
+              </div>
+              <div class="form-group col-md-6">
+                <%= form.label :Check_Out %>
+                <%= form.text_field :last_date ,required: true, autofocus: true, :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray datepicker",id: "from-date-datepicker", placeholder: "Checkout Date" %>
+              </div>
+    
+              <div class="form-group col-md-6">
+                <%= form.label :Adult %>
+                <%= form.number_field :num_of_user, required: true, :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Num of User " %>
+              </div>
+
+              <div class="form-group col-md-12 tc_dark">
+                <div class="form-group col-md-12 signup-btn">
+                    <input type="submit" value="Booking Now" class="bg_green bg_black_h tc_white" />
+                </div>
+              </div>  
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- Container /- -->
+  </div>
+   <!-- SignUp Form /- -->
+</main>
+
+<script>
+  $( document ).ready(function() { 
+    $(".datepicker").datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
+      todayBtn: "linked"
+    });
+  }); 
+</script>
+<script>
+  $( document ).ready(function() { 
+    $("#from-datepicker").datepicker('setStartDate', 'Date.Today');
+  });
+  $( document ).ready(function() { 
+    $("#from-date-datepicker").datepicker('setStartDate', 'Date.Today');
+  }); 
+</script>

@@ -1,0 +1,33 @@
+ <html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Ecofnb<%#= @user.name %></h1>
+    <br/>
+    <h1>Booking information</h1>
+    <p>
+      You have successfully Booked Room: <%#= @user.name %><br>
+    </p>
+    <p>Stay: <%= @booking_data.stay_home.stay_name %></p>
+    <p>Stay Room: <% @booking_data.booking_rooms.each do |booking_room| %>
+               <span><%= Room.find(booking_room.room_id).name %></span>
+               <% end %></p>
+    <p>Checkin Date: <%= @booking_data.start_date %></p>
+    <p>Checkout Date: <%= @booking_data.last_date %></p>
+    <p>Number of Guests: <%= @booking_data.num_of_user %></p>
+    <p>Number of rooms: <%= @booking_data.num_of_room %></p>
+    
+    <h1>Payment information</h1>
+    <p>Order id: <%= @create_payment.order_id %></p>
+    <p>TXN id: <%= @create_payment.txn_id %></p>
+    <p>TXN Amount: <%= @create_payment.txn_amount %></p>
+    <p>Payment Mode: <%= @create_payment.payment_mode %></p>
+    <p>TXN Date: <%= @create_payment.txn_date %></p>
+    <p>Status: <%= @create_payment.status %></p>
+    <p>Gateway: <%= @create_payment.getway %></p>
+    <p>Bank TXN id: <%= @create_payment.bank_txn_id %></p>
+    
+    
+  </body>
+</html>

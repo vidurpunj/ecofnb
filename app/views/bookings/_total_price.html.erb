@@ -1,0 +1,19 @@
+<br/>
+<center>
+<span style='font-weight: 900; font-size: 3rem;'><%= @bookings.stay_name %></span>
+<div class='text-success' style='font-weight: 900; font-size: 2.5rem;'>
+Total Price:-
+<%#= byebug %>
+<!-- @bookings.try(:stay_price) * -->
+<% if @total_number_days==0 %>
+<%= (@booking.num_of_room) * (RoomCategory.find_by_id(@booking.room_category_id).category_price)%>
+
+<% else %>
+<%#= @hotel_rooms.limit(params[:booking][:num_of_room].to_i).map(&:room_price).inject(0){|sum,x| sum + x }*(@total_number_days)%>
+<%#byebug %>
+<%= (@total_number_days) * (@booking.num_of_room) * (RoomCategory.find_by_id(@booking.room_category_id).category_price) %>
+<% end %>
+<%#= @hotel_rooms.limit(params[:booking][:num_of_room].to_i).map(&:room_price).inject(0){|sum,x| sum + x }%>
+</div>
+</center>
+<br/>

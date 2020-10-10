@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <div class="row">
+        <div class="col-md-12 filter-by-block md-margin-bottom-60">
+          <div class="panel-group" id="accordion">
+            <div class="dropdown">
+              <label class="aman" style="font-family:Verdana;">Stay Categories</label>
+              <%= select_tag "stay_type", options_from_collection_for_select(Stay.all, 'id', 'name', params[:search_parameters][:stay_type]), class: "form-control dropdown" %>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-12 filter-by-block md-margin-bottom-60">
+          <div class="panel-group" >
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h2 class="panel-title">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                    <label style="font-family:Verdana;">Stay Star Rating</label>
+                    <i class="fa fa-angle-down"></i>
+                  </a>
+                </h2>
+              </div>
+              <div class="">
+                <div class="">
+                  <ul class="list-unstyled checkbox-list">
+                    <li>
+                      <input type="checkbox" onclick="star_rating('5')">
+                         <span class="fa fa-star checked"></span>
+                         <span class="fa fa-star checked"></span>
+                         <span class="fa fa-star checked"></span>
+                         <span class="fa fa-star checked"></span>
+                         <span class="fa fa-star checked"></span>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="4rating" onclick="star_rating('4')">
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="3rating" onclick="star_rating('3')">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="2rating" onclick="star_rating('2')">
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="1rating" onclick="star_rating('1')">
+                        <span class="fa fa-star checked"></span>
+                    </li>                 
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+<style type="text/css">
+  select#stay_type {
+    margin-left: 10px;
+    padding: 3px;
+    height: 31px;
+    width: 150px;
+    font-size: 19px;
+    text-transform: uppercase;
+    margin-top: -4px;
+}
+label.aman {
+    margin-left: 12px;
+
+}
+</style>

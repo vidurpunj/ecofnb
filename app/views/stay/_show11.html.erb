@@ -1,0 +1,366 @@
+
+<div class="container-fluid no-left-padding no-right-padding page-banner">
+   <!-- Container -->
+   <div class="container">
+      <h3 class="tc_white"><%=@stay_home.stay_name%> </h3>
+      <!-- <ol class="breadcrumb">
+         <li><a class="tc_white tc_white_h" href="/">Home</a></li>
+         <li><a class="tc_white tc_white_h" href="#"><%#=@stay_home.stay_name%></a></li>
+      </ol> -->
+   </div>
+   <!-- Container /- -->
+</div>
+<!-- Page Banner /- -->
+<main class="site-main">
+   <div class="container-fluid no-left-padding no-right-padding blog-single">
+      <!-- Container -->
+      <div class="container">
+         <!-- Row -->
+         <div class="row">
+            <!-- Content Area -->
+            <div class="col-md-8 col-sm-6 content-area blog-single-curv">
+               <article class="type-post">
+                  <!-- Entry Cover -->
+                  <div class="entry-cover">
+                     <div class="flexslider">
+                        <ul class="slides">
+                           <% @stay_home.stay_images.each do |stay_img| %>
+                           <li>
+                              <img src="<%= stay_img.stay_image.url %>" alt="<%= @stay_home.stay_name%>room image" class="stayimageheight" />
+                           </li>
+                           <% end %>
+                        </ul>
+                     </div>
+                     <h5><b>Homestay Name:-</b><%=@stay_home.stay_name%></h5>
+                     <b>Stay Descriptaion:-</b>
+                     <div class="entry-content brd_color_light_gray tcp_gray2 text-justify">
+                        <aside class="widget widget_recent_comment">
+                           <%= raw @stay_home.description%>
+                        </aside>
+                     </div>
+                     <b> Stay Facilities:-</b>
+                     <div class="row">
+                        <div class="entry-content brd_color_light_gray tcp_gray2 text-justify">
+                           <aside class="widget widget_recent_comment">
+                              <% @stayhome_facilities.take(4).each do |f|%>
+                              <%# byebug %>
+                              <div class="col-md-6">
+                                 <i class="<%=f.feature_icon%>" aria-hidden="true"></i><%= f.name %>
+                              </div>
+                              <% end%>
+                           </aside>
+                           <br/>
+                           <br />
+                           <br />
+                           <div class="panel panel-default">
+                              <div class="accordion" role="tab" id="headingFour">
+                                 <h4 class="panel-title">
+                                    <a>Show All</a>
+                                 </h4>
+                              </div>
+                              <div id="collapseFour" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFour">
+                                 <div class="panel-body">
+                                    <div class="spec-body">
+                                       <div class="detailssubbox">
+                                          <div class="entry-content brd_color_light_gray tcp_gray2 text-justify">
+                                             <b>All Stay Facilities</b>
+                                             <br />
+                                             <br/>
+                                             <div>
+                                                <div class="row">
+                                                   <% @stayhome_facilities.pluck(:facility_type_id).uniq.each do |f|%>
+                                                   <div class="col-md-6">
+                                                      <aside class="widget widget_recent_comment">
+
+                                                         <li type="square">
+                                                            <b><%=FacilityType.find_by_id(f).try(:name)%></b> 
+                                                            <%@stayhome_facilities.where(:facility_type => f).each do |feature| %>
+                                                            <div>
+                                                               <i class="<%=feature.feature_icon%>" aria-hidden="true"></i>
+                                                               <%= feature.name %>
+                                                            </div>
+                                                            <% end %>
+                                                         </li>
+                                                      </aside>
+                                                      </div>
+                                                   <%end%>
+                                                
+                                                </div>
+                                              </div>
+                                              <li class=""><b>Other Facilities</b></li>
+                                                <div class="welcome-box tcp_gray2 policy_ecofnb">
+                                                  <!-- <i style="font-size:24px" class="fa">&#xf0f6;</i> -->
+
+                                                   <aside class="widget widget_recent_comment">
+                                                      <%#= @stay_home.cancellation_policy.truncate(200).html_safe%>
+                                                      <i class="fa fa-th-large" aria-hidden="true"></i>&nbsp;&nbsp;<%= truncate(sanitize(@stay_home.other, tags: []), length: 200) %>
+                                                   </aside>
+                                                </div>
+                                              </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                     </div>
+                     <div class="entry-content brd_color_light_gray tcp_gray2 text-justify">
+                        <div class="w3-bar w3-black">
+                           <div class="tabs-container" >
+                              <ul class="nav nav-tabs">
+                                 <li class="active"><a data-toggle="tab" onclick="openCity('London')"><b>Stay Policy</b></a></li>
+                                 <li class=""><a data-toggle="tab" onclick="openCity('Paris')" id="my-tab-2"><b>Cancellation Policy</b></a></li>
+                              </ul>
+                           </div>
+                           <div id="London" class="w3-container city">
+                              <div class="welcome-box tcp_gray2 policy_ecofnb">
+                                 <%= truncate(sanitize(@stay_home.stay_rule, tags: []), length: 200) %>
+                                 <a href="#ow_wel-1" class="mfp-content tc_green_h">Read More</a>
+                                 <div class="zoom-anim-dialog mfp-hide small-dialog" id="ow_wel-1">
+                                    <%= raw @stay_home.try(:stay_rule)%>
+                                 </div>
+                              </div>
+                           </div>
+                           <div id="Paris" class="w3-container city" style="display:none">
+                              <div class="welcome-box tcp_gray2 policy_ecofnb">
+                                 <aside class="widget widget_recent_comment">
+                                    <%#= @stay_home.cancellation_policy.truncate(200).html_safe%>
+                                    <%= truncate(sanitize(@stay_home.cancellation_policy, tags: []), length: 200) %>
+                                 </aside>
+                                 <a href="#ow_wel-2" class="mfp-content tc_green_h">Read More</a>
+                                 <div class="zoom-anim-dialog mfp-hide small-dialog" id="ow_wel-2">
+                                    <%= raw @stay_home.try(:cancellation_policy) %>
+                                 </div>
+
+                              </div>
+                           </div>
+                            <div id="New" class="w3-container city" style="display:none">
+                              
+                           </div>
+                           <!-- <b><%=@stay_home.other%></b> -->
+                        </div>
+                     </div>
+                     <style>
+                        .policy_ecofnb{
+                        margin-bottom: 15px !important;
+                        padding-left: 0px !important;
+                        }
+                     </style>
+                     <script>
+                        function openCity(cityName) {
+                          var i;
+                          var x = document.getElementsByClassName("city");
+                          for (i = 0; i < x.length; i++) {
+                            x[i].style.display = "none";  
+                          }
+                          document.getElementById(cityName).style.display = "block";  
+                        }
+                     </script>
+                     <div class="row gallery-list">
+                     </div>
+                  </div>
+               </article>
+               <!-- Comment Area -->
+               <div class="rating_review_new">
+                  <% if current_user.present? %>
+                  <%= link_to 'Rating and Review', new_rating_review_path(@stay_home), class: "bg_green tc_white tc_green_h bg_white_h decoration_btn", remote: true %>
+                  <% else %>
+                  <%= link_to 'Rating and Review', new_user_session_path, class: "bg_green tc_white tc_green_h bg_white_h decoration_btn" %>
+                  <% end %>
+               </div>
+               <br/>
+               <br/>
+               <aside class="widget widget_categories">
+               <div class="widget-title">
+                  <div class="m-t-md">
+                     <% if @stay_home.avg_rating==0.0 %>
+                     <% (1 .. 5.to_i).each do |t|%>
+                     <span class="fa fa-star-empty"></span>
+                     <%end %>
+                     <%else%>
+                     <% (1 .. @stay_home.avg_rating.to_i).each do |t|%>
+                     <span class="fa fa-star checked"></span>
+                     <% end %>
+                     <% if @stay_home.avg_rating.to_s.split('.')[1].to_i > 0 %>
+                     <span class="fa fa-star-half abc"></span>
+                     <% end %>
+                     (<%= @stay_home.avg_rating %>)
+                     <p class="total-review-txt"><%= @stay_home.rating_reviews.count %> Ratings &amp; <%= @stay_home.rating_reviews.count %> Review</p>
+                     <% end %>
+                  </div>
+               </div>
+               <aside>
+               <%= render '/rating_reviews/index'%>
+            </div>
+            <!-- Content Area /- -->
+            <div class="col-md-4 col-sm-6 col-xs-12 widget-area">
+               <!-- Widget : Recent Comment -->
+               <div>
+                  <%#= link_to 'Book Now', bookings_new_stay_path, class: "btn-success decoration_btn" %>
+                  <%= link_to 'Book Now', new_stay_booking_path(@stay_home), class: "bg_green tc_white tc_green_h bg_white_h decoration_btn" %>
+               </div>
+               <aside class="widget widget_recent_comment">
+                  <div class="widget-title">
+                     <h3 class="tc_dark">Map</h3>
+                  </div>
+                  <ul>
+                     <li>
+                     <iframe src="https://maps.google.com/maps?q=<%=@stay_home.latitude%>, <%=@stay_home.longitude%> &z=15&output=embed" width="300" height="350" frameborder="0" style="border:0"></iframe>
+                     </li>
+                  </ul>
+               </aside>
+               <!-- Widget : Recent Comment /- -->
+               <!-- Widget : Category -->
+               <% if params[:controller]=='bookings' %>
+               <aside class="widget widget_categories">
+                  <div class="widget-title">
+                     <%= render 'bookings/search_rooms'%>
+                  </div>
+               </aside>
+               <% end %>
+               <aside class="widget widget_categories">
+                  <div class="widget-title">
+                     <h3 class="tc_dark">Property Policies & Conditions</h3>
+                  </div>
+                  <ul>
+                     <li>
+                        <ul class="points-list">
+                           <li class="tc_dark"><i class="fa fa-envira tc_green"></i> 1. Cancellation policy: 2 days before arrival.</li>
+                           <li class="tc_dark"><i class="fa fa-envira tc_green"></i> 2. Check in from 10:00 to 23:00.</li>
+                           <li class="tc_dark"><i class="fa fa-envira tc_green"></i>  3. Check out before 11:00 noon.</li>
+                           <li class="tc_dark"><i class="fa fa-envira tc_green"></i> 4. Payment upon arrival by cash only.</li>
+                           <li class="tc_dark"><i class="fa fa-envira tc_green"></i>   5. Reception working hours 09:00-20:00.</li>
+                           <li class="tc_dark"><i class="fa fa-envira tc_green"></i>  6. No age restriction.</li>
+                           <li class="tc_dark"><i class="fa fa-envira tc_green"></i>   7. Taxes included.</li>
+                           <li class="tc_dark"><i class="fa fa-envira tc_green"></i>    8. Breakfast included.</li>
+                           <li class="tc_dark"><i class="fa fa-envira tc_green"></i>    9. Smoking allowed.</li>
+                        </ul>
+                     </li>
+                  </ul>
+               </aside>
+               <!-- Widget : Category /- -->
+               <!-- Widget : Recent Post -->
+               <aside class="widget widget_recentposts">
+                  <div class="widget-title">
+                     <h3 class="tc_dark">Home Stay Place</h3>
+                  </div>
+                  <img src="" />
+                  <%@resent_stay_home.each do |resent_home_s|%>
+                  <div class="latest-content">
+                     <a href="<%=stay_path(resent_home_s)%>" title="Recent Posts"><i><img src="<%=resent_home_s.image_select%>" class="otherlinkstay" alt="Vista Hostel"></i></a>
+                     <h5><a class="tc_dark tc_green_h" title="<%= resent_home_s.stay_name%>" href="<%=stay_path(resent_home_s)%>"><%= resent_home_s.stay_name%></a></h5>
+                     <span><i class="fa fa-calendar-check-o tc_green"></i><a class="tc_dove_gray tc_green_h" href=""><%= resent_home_s.created_at.to_date.strftime("%d %b %Y")%> </a></span>
+                  </div>
+                  <%end%>
+               </aside>
+               <!-- Widget : Recent Post -->
+               <%=render 'shared/main_link'%>
+            </div>
+            <!-- Widget Area /- -->
+         </div>
+         <!-- Row /- -->
+      </div>
+      <!-- Container /- -->
+   </div>
+   <!-- Blog Single Right Sidebar /- -->
+</main>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNcD7L1bPn2xaFFtU6BUhXAUU_1FdNZQI&signed_in=true&libraries=places&callback=initialize" async defer></script>
+<style type="text/css">
+   .decoration_btn
+   {
+   border-radius: 3px;
+   display: inline-block;
+   font-weight: bold;
+   text-transform: uppercase;
+   letter-spacing: 0.7px;
+   padding: 12px 25px;
+   text-decoration: none !important;
+   -webkit-transition: all 1s ease 0s;
+   -moz-transition: all 1s ease 0s;
+   -o-transition: all 1s ease 0s;
+   transition: all 1s ease 0s;
+   background-color: #01c26e;
+   color: #fff;
+   }
+   .table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    font-size: 1.7rem !important;
+}
+</style>
+<script type="text/javascript">
+   function initialize() {
+      var latlng = new google.maps.LatLng(<%=@stay_home.latitude%> ,<%=@stay_home.longitude%> );
+       var map = new google.maps.Map(document.getElementById('map'), {
+         center: latlng,
+         zoom: 10
+       });
+       var marker = new google.maps.Marker({
+         map: map,
+         position: latlng,
+         draggable: false,
+         anchorPoint: new google.maps.Point(0, -29)
+      });
+       var infowindow = new google.maps.InfoWindow();   
+       google.maps.event.addListener(marker, 'click', function() {
+         var iwContent = '<%=@stay_home.address%>';
+         // including content to the infowindow
+         infowindow.setContent(iwContent);
+         // opening the infowindow in the current map and at the current marker location
+         infowindow.open(map, marker);
+       });
+   }
+</script>
+<style>
+   .glyphicon-star:before {
+   content: "\e006";
+   }
+   .glyphicon-star {
+   font-size: 15px;
+   color: #f3a108;
+   }
+   .glyphicon-star.half {
+   position: relative;
+   }
+   .glyphicon-star.half:before {
+   position: relative;
+   z-index: 9;
+   width: 47%;
+   display: block;
+   overflow: hidden;
+   }
+   .glyphicon-star.half:after {
+   content: '\e006';
+   position: absolute;
+   z-index: 8;
+   color: #bdc3c7;
+   top: 0;
+   left: 0;
+   }
+   .panel {
+   margin-bottom: 30px;
+   background-color: #FEE;
+   border: 17px solid transparent;
+   border-radius: 4px;
+   -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+   box-shadow: 0 1px 1px rgba(0,0,0,.05);
+   }
+</style>
+<script>
+   var acc = document.getElementsByClassName("accordion");
+   var i;
+   
+   for (i = 0; i < acc.length; i++) {
+     acc[i].addEventListener("click", function() {
+       this.classList.toggle("active");
+       var panel = this.nextElementSibling;
+       if (panel.style.display === "block") {
+         panel.style.display = "none";
+       } else {
+         panel.style.display = "block";
+       }
+     });
+   }
+</script>

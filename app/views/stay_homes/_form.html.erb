@@ -1,0 +1,288 @@
+<%= render 'merchant/partner'%>
+<!-- Page Banner /- -->
+<div class="card">
+   <!-- SignUp Form -->
+   <div class="container-fluid no-left-padding no-right-padding signup-section">
+      <!-- Container -->
+      <div class="container">
+         <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+               <div class="signup-form">
+                  <h3> <%=params[:action].upcase%> HOMESTAY </h3>
+                  <!--  <div id="move-marker" required="true"> 
+                     <p>Move the marker to the right address</p>
+                     </div> -->
+                     <div class="col-md-6" >
+                      <input id="address" type="textbox" value="Haldwani" class="form-control">
+                      <input type="button" value="Search for Address" class="btn btn-success" onclick="searchAddress()">
+                    </div>
+                    <div id="move-marker" required="true"> 
+                    <p>Please search or move the marker to select your address</p>
+                </div>
+                  <div id="map"></div>
+                  <style type="text/css">
+                     #map {
+                     height: 350px;
+                     }
+                  </style>
+                  <div class="clearfix"></div>
+                  <%= nested_form_for stay_home, local: true do |form| %>
+                  <% if stay_home.errors.any? %>
+                  <div id="error_explanation">
+                     <h2>
+                        <%= pluralize(stay_home.errors.count, "error") %> prohibited
+                        this stay from being saved:
+                     </h2>
+                     <ul>
+                        <% stay_home.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                        <% end %>
+                     </ul>
+                  </div>
+                  <% end %>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <b> <%= form.label :Stay_Name %></b><br>
+                       <%= form.text_field :stay_name, class: "form-control" ,:required => true%>  
+                    </div>
+                    <div class="col-md-6">
+                      <b> <%= form.label :Stay_Title %></b><br>
+                       <%= form.text_field :stay_title, class: "form-control" ,:required => true%>
+                    </div>
+                    <!-- <div class="col-md-12">
+                      <b> <%#= form.label :Stay_Price %></b><br>
+                       <%#= form.text_field :stay_price, class: "form-control" ,:required => true%>
+                    </div> -->
+                    <br  />
+                    <br/>
+                    <br/>
+                    <br/>
+                </br>
+                    <div class="col-md-6">
+                      <b> <%= form.label :Address%></b><br>
+                       <%#= form.text_field :address, class: "form-control" %>
+                       <%= form.text_area :address, class: "form-control" ,:placeholder=>"Search Address" ,:required => true%>
+                    </div>
+                     <div class="col-md-6">
+                      <b> <%= form.label :Location_Description%></b><br>
+                       <%#= form.text_field :address, class: "form-control" %>
+                       <%= form.text_area :location_description, class: "form-control" ,:placeholder=>"Landmark or Location Description" %>
+                    </div>
+                    <br  />
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div class="col-md-12">
+                       <b><%= form.label :Stay_Categories %></b><br>
+                       <%= form.select :stay_id, Stay.all.collect { |p| [ p.name, p.id] }, { }, { class: "form-control" }%>
+                    </div>
+                   <br />
+                    <br/>
+                    <br/>
+                    <br/>
+
+                  <div class="col-md-12">
+                     <b><%= form.label :description %></b><br>
+                     <%= form.cktext_area :description, class: "form-control", :placeholder=>"About HomeStay" ,:required => true%>
+                  </div>
+                   <br />
+                    <br/>
+                    <br/>
+                    <br/>
+                   <div class="col-md-12">
+                     <b><%= form.label :Stay_Rules %></b><br>
+                     <%= form.cktext_area :stay_rule ,:required => true%>
+                  </div>
+                     <br />
+                    <br/>
+                    <br/>
+                    <br/>
+                   <div class="col-md-12">
+                     <b><%= form.label :Stay_Cancellation_Policy %></b><br>
+                     <%= form.cktext_area :cancellation_policy ,:required => true%>
+                  </div>
+
+                  <div class="col-md-12">
+                    <b><%= form.label :Stay_Facilities %></b><br>
+                     <%= select_tag("Facility[]", options_for_select(Facility.all.map { |ff| [ff['name'], ff['id']] }),
+                        {:multiple=>true, :id => "dropdown", class: "form-control"}) %>
+                  </div>
+                  <div class="col-md-12">
+                      <b> <%= form.label :Other_Facilities %></b><br>
+                       <%= form.text_field :other, class: "form-control"%>  
+                    </div>
+                   <br />
+                    <br/>
+                    <br/>
+                    <br/>
+                  <div class="col-md-6">
+                     <%= form.fields_for :stay_images do |task| %>
+                     <%= task.file_field :stay_image, class: "form-control" %>
+                     <% if task.object.stay_image and task.object.stay_image.file %>
+                     <%= image_tag task.object.stay_image.url ,size:"100x100"%>
+                     <%end%></br>
+                     <%= task.link_to_remove "Remove this Images" %></br>
+                     <% end %>
+                     <%= form.link_to_add "Add Stay Images", :stay_images %>
+                  </div>
+                  <div class="col-sm-6">    
+                     <%= form.text_field :latitude, :hidden => true, :required => true %>
+                     <%= form.text_field :longitude, :hidden => true, :required => true %>
+                     <%= form.text_field :city, :hidden => true, :required => true %>
+                     <%= form.text_field :state, :hidden => true, :required => true %>
+                  </div>
+                   <br />
+                    <br/>
+                    <br/>
+                    <br/>
+                  <div class="col-md-12 tc_dark">
+                     <div class="col-md-12 signup-btn text-center">
+                      <% if stay_home.id.present? %>
+                        <%= form.submit 'Update Stay' %>
+                      <% else %>
+                        <%= form.submit 'Create Stay' %>
+                        <% end %>
+                         
+                     </div>
+                  </div>
+                  <%end%>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Container /- -->
+   </div>
+   <!-- SignUp Form /- -->
+</div>
+
+<script type="text/javascript">
+   $(document).ready(function() {
+   $('#dropdown').select2(); 
+   });
+</script>
+
+<script>
+    <%if stay_home.latitude.present? &&  stay_home.longitude.present?%>
+      var city = { lat: <%= stay_home.latitude %>, lng: <%= stay_home.longitude %> };
+      <% else -%>
+       var city =  {lat: 29.216875682984703, lng: 79.51261807817377};
+    <% end %>
+   
+    var marker;
+    var map;
+    var geocoder;
+    
+    function initMap() {
+        geocoder = new google.maps.Geocoder();
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: city,
+            scrollwheel: false
+        });
+
+        marker = new google.maps.Marker({
+            position: city,
+            draggable: true,
+            map: map
+        });
+
+        google.maps.event.addListener(marker, 'dragend', function() {
+            geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[0]) {
+                      
+                        for (var i = 0; i < results.length; i++) {
+                          if (results[i].types[0] === "locality") {
+                            var city = results[i].address_components[0].short_name;
+                            var state = results[i].address_components[2].long_name
+                            $("#stay_home_city").val(city);
+                            $("#stay_home_state").val(state);
+                          }
+                        }
+                         $('#stay_home_latitude').val(marker.getPosition().lat());
+                         $('#stay_home_longitude').val(marker.getPosition().lng());
+                        $('#stay_home_address').val(results[0].formatted_address);
+                        $('#city_name').val(getCityShortName(results));
+                        $('#address').val(results[0].formatted_address);
+                    }
+                }
+            });
+        });
+    }
+
+    function getCityShortName(results) {
+        for (var result = 0; result < results.length; result++) {
+            for (var address_component = 0; address_component < results[result].address_components.length; address_component++) {
+                var type = results[result].address_components[address_component].types[0];
+
+                if (type === "locality") {
+                    return results[result].address_components[address_component].short_name;
+                }
+            }
+        }
+        return "";
+    }
+
+    function getCityLongName(results) {
+        for (var result = 0; result < results.length; result++) {
+            var type = results[result].types[0];
+
+            if (type === "locality") {
+                return results[result].formatted_address;
+            }
+        }
+        return "";
+    }
+    function searchAddress() {
+        var address = document.getElementById('address').value;
+        geocoder.geocode( { 'address': address}, function(results, status) {
+            if (status == 'OK') {
+                map.setCenter(results[0].geometry.location);
+                marker.setPosition(results[0].geometry.location);
+
+                if (results[0]) {
+                    for (var i = 0; i < results.length; i++) {
+                          if (results[i].types[0] === "locality") {
+                            var city = results[i].address_components[0].short_name;
+                            var state = results[i].address_components[2].long_name
+                             $("#stay_home_city").val(city);
+                            $("#stay_home_state").val(state);
+                          }
+                        }
+                    $('#stay_home_address').val(results[0].formatted_address);
+                    $('#stay_home_latitude').val(marker.getPosition().lat());
+                         $('#stay_home_longitude').val(marker.getPosition().lng());
+                        $('#stay_home_address').val(results[0].formatted_address);
+                        $('#address').val(results[0].formatted_address);
+                }
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+            }
+        });
+    }
+  
+
+</script>
+
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNVIo-1Q1GZaehfN25nY5ht_yXbpAd5Kk&callback=initMap">
+</script>
+<script>
+    // Validation for moving the marker before submiting the form
+    document.addEventListener('invalid', (function () {
+        return function (e) {
+            var latitude = document.getElementById("stay_home_latitude").value;
+            var longitude = document.getElementById("stay_home_longitude").value; 
+            if((latitude == "") || (latitude == ""))
+            {
+                e.preventDefault();
+                var map = document.getElementById("move-marker");
+                map.focus();
+                // alert("Please search or move the marker to select your address")
+                map.scrollIntoView();
+                $('#move-marker p').css({'color': 'red'});
+            }
+    };
+})(), true);
+</script>

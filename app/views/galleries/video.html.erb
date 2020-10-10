@@ -1,0 +1,30 @@
+<!-- Page Banner -->
+<div class="container-fluid no-left-padding no-right-padding ">
+    <!-- Container --><!-- Container /- -->
+</div><!-- Page Banner /- -->
+
+<main class="site-main">
+
+    <!-- Gallery Masonry -->
+    <div class="container-fluid no-left-padding no-right-padding gallery-main gallery-masonry">
+        <!-- Container -->
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header tcp_gray">
+                <h3 class="tc_dark tcspan_green"><span>Video</span> Gallery</h3>
+                    <% @videos.each do |video|%>
+                   <div class="col-md-4 col-sm-4 col-xs-6 gallery-box environment">
+                        <div class="gallery-content">
+                            <iframe width="300" height="200" src="https://www.youtube.com/embed/<%=video.convert %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <% end -%>
+                </div>
+
+
+            </div><!-- Gallery List /- -->
+            <div class="clearfix"></div>
+        </div><!-- Gallery Masonry /- -->
+    </div>
+</main>
+

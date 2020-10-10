@@ -1,0 +1,96 @@
+<section class="section"  id="next">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 mx-auto text-center mb-5">
+        <h2 class="heading">Check Availabilty</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="block-32">
+
+        <form action="#">
+          <div class="row">
+            <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
+              <label for="checkin_date" class="font-weight-bold text-black">Check In</label>
+              <div class="field-icon-wrap">
+                <div class="icon"><span class="icon-calendar"></span></div>
+                <input type="text" id="checkin_date" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
+              <label for="checkout_date" class="font-weight-bold text-black">Check Out</label>
+              <div class="field-icon-wrap">
+                <div class="icon"><span class="icon-calendar"></span></div>
+                <input type="text" id="checkout_date" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-6 mb-3 mb-md-0 col-lg-3">
+              <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label for="adults" class="font-weight-bold text-black">Adults</label>
+                  <div class="field-icon-wrap">
+                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                    <select name="" id="adults" class="form-control">
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4+</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label for="children" class="font-weight-bold text-black">Children</label>
+                  <div class="field-icon-wrap">
+                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
+                    <select name="" id="children" class="form-control">
+                      <option value="">1</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                      <option value="">4+</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 align-self-end">
+              <button class="btn btn-primary btn-block text-white">Check Availabilty</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+<style type="text/css">
+  .block-32 {
+  background: #2c5506;
+  padding: 30px;
+  -webkit-box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+  color: #fff !important; }
+  .block-32 .field-icon-wrap {
+    position: relative; }
+    .block-32 .field-icon-wrap .form-control {
+      position: relative;
+      padding-right: 40px;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      color: #fff; }
+    .block-32 .field-icon-wrap .icon {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      right: 15px;
+      z-index: 2; }
+    .block-32 .field-icon-wrap select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      width: 100%; }
+</style>

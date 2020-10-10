@@ -1,0 +1,80 @@
+<div class="container-fluid no-left-padding no-right-padding page-banner Login-banner">
+   <div class="container">
+      <h3 class="tc_white">Booking</h3>
+      <ol class="breadcrumb">
+         <li class="active tc_white">Information</li>
+      </ol>
+   </div>
+</div>
+<p id="notice"><%= notice %></p>
+<div class="container">
+    <table class="table datatable table-bordered">
+      <thead>
+        <tr class= "table-aman">
+          <th>User</th>
+          <th>Stay</th>
+          <th>Room Number</th>
+          <th>Room Type</th>
+          <th>Check in Date</th>
+          <th>Check out Date</th>
+          <th>Number of Guests</th>
+          <th>Number of rooms</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class= "table-aman">
+            <td><%#= @booking.user_id %><%= @booking.user.name %></td>
+            <td><%= @booking.stay_home.try(:stay_name) %></td>
+            <td><% @booking.booking_rooms.each do |booking_room| %>
+                   <span><%= Room.find(booking_room.room_id).name %></span>
+                   <% end %></p></td>
+            <td><% @booking.booking_rooms.each do |booking_room| %>
+                   <span><%= RoomCategory.find(booking_room.room.room_category_id).category_name %></span>
+                   <% end %></p></td>
+            <td><%= @booking.start_date %></td>
+            <td><%= @booking.last_date %></td>
+            <td><%= @booking.num_of_user %></td>
+            <td><%= @booking.num_of_room %></td>
+          </tr>
+      </tbody>
+    </table>
+</br>
+    <table class="table datatable table-bordered">
+      <thead>
+        <tr class= "table-aman-2">
+          <th>ORDERID</th>
+          <th>TXNID</th>
+          <th>TXNAMOUNT</th>
+          <th>PAYMENTMODE</th>
+          <th>TXNDATE</th>
+          <th>TXN STATUS</th>
+          <th>GATEWAY</th>
+          <th>BANKTXNID</th>
+          <th>BANKNAME</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class= "table-aman-2">
+            <td><%= @payment.try(:order_id) %></td>
+            <td><%= @payment.try(:txn_id) %></td>
+            <td><%= @payment.try(:txn_amount) %></td>
+            <td><%= @payment.try(:payment_mode) %></td>
+            <td><%= @payment.try(:txn_date) %></td>
+            <td><%= @payment.try(:status) %></td>
+            <td><%= @payment.try(:getway) %></td>
+            <td><%= @payment.try(:bank_txn_id) %></td>
+            <td><%= @payment.try(:bank_name) %></td>
+          </tr>
+      </tbody>
+    </table>
+</div>
+<style type="text/css">
+  tr.table-aman {
+    font-size: large;
+}
+ tr.table-aman-2 {
+    font-size: 1.3rem !important;
+}
+</style>
+<%#= link_to 'Edit', edit_booking_path(@booking) %>
+<%#= link_to 'Back', bookings_path %>

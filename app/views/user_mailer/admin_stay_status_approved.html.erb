@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <style>
+        .eventapp-content
+        {
+            margin-left:10px;
+            margin-right:10px;
+            background-color: #e6edee;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+    </style>
+    <body>
+        <div class="eventapp-content">
+            <div class="header" style="background-color: #292b2c; color: white; min-height: 50px; font-size:1.25rem;">
+                <img src="https://ecofnb.s3.ap-south-1.amazonaws.com/logo/logo121.png" width="50" height="50" style="margin-top: 10px; margin-left: 10px; vertical-align: bottom;">
+                    <!-- EventApp -->
+                </img>
+            </div>
+
+            <p style="padding:10px;">
+              Dear <strong>Admin</strong> ,
+              <strong><%=@merchant.name%> Partner</strong> has created a new stay named <%=@stay_home.stay_name%>Please approve it by clicking on following link.
+            </p><br/>
+             
+            <p style="color: #297899;font-size: 14px;line-height: 21px;padding: 10px;margin: 0;border: 1px solid #d9ecf4;background: #e3f7ff;text-shadow: 0 1px 0 #fff;border-radius: 3px;">
+                <strong>
+                 <%= link_to "approved homestay status", stay_status_approved_stay_home_url(@stay_home) %>
+                </strong>
+           </p>
+        </div>
+  </body>
+</html>

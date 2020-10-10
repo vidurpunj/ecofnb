@@ -1,0 +1,27 @@
+﻿body {
+}
+
+
+
+        .bs-example {  
+            
+            height:220px;  
+              
+        }  
+  
+        .centerlook {  
+            padding-left: 400px;  
+            font-weight: bold;  
+            width: 1000px;  
+        }  
+        .error {  
+            padding-left: 40px;  
+            font-weight: bold;  
+            
+            color: red;  
+        }  
+  
+        .loginbtn {  
+            padding-left: 500px;  
+        }  
+    

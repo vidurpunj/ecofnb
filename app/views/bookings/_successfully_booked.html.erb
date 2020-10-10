@@ -1,0 +1,10 @@
+<section id="reservation-form" class="mt50 clearfix wrapper fadeInDown">
+  <div class="col-sm-12 col-md-4" id="formContent">
+    <h2 class="lined-heading"><span>Successfully Booked</span></h2>
+    <h3><%= @booking.stay_home.stay_name%></h3>
+    <div class="price">
+     
+    <div id="message"></div>
+    <h5><i><%= @booking.room.name %> Room <%#= @booking.hotel_room.name %> has been successfully booked by you from <strong><%= @booking.start_date.to_date %></strong> to <strong><%= @booking.last_date.to_date %></strong></i></h5>
+  </div>
+</section>

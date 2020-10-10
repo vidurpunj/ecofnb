@@ -1,0 +1,87 @@
+<!-- Page Banner -->
+<script type="text/javascript">
+  $( document ).ready(function() {
+    <% if  devise_error_messages! != ""%>
+  $('#signup_with_email').html("<%= j (render partial: 'devise/registrations/email_with_sign_up') %>")
+  $('#hide_form').hide();
+  <%end%>
+});
+  
+</script>
+<div id="signup_with_email"></div>
+<div id="hide_form">
+  <div class="container-fluid no-left-padding no-right-padding page-banner signup-banner">
+     <!-- Container -->
+     <div class="container">
+        <h3 class="tc_white">GUEST SIGN UP</h3>
+        <!-- <ol class="breadcrumb">
+           <li class="active tc_white">Sign Up</li>
+        </ol> -->
+     </div>
+     <!-- Container /- -->
+  </div>
+  <!-- Page Banner /- -->
+  <main class="site-main">
+     <!-- SignUp Form -->
+     <div class="container-fluid no-left-padding no-right-padding signup-section">
+     <!-- Container -->
+     <div class="container">
+        <div class="row">
+           <div class="btn-group-vertical">
+           <div class="col-md-offset-1 col-md-10">
+              <div class="signup-form">
+                 <!-- <div class="social-login">
+                      <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
+                  </div>
+                  <div class="social-login">
+                      <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
+                  </div> -->
+                  <div class="col-md-6">
+                    <%= link_to "/auth/google_oauth2", class:"btn btn-block btn-social btn-google" do %>
+                       <span class="fa fa-google"></span> SignUp with Google+
+                    <% end %>
+                 </div>
+                 <div class="col-md-6">
+                    <%= link_to "/auth/facebook", class:"btn btn-block btn-social btn-facebook" do %>
+                        <span class="fa fa-facebook"></span> SignUp with Facebook
+                    <% end %>
+                   </div> 
+                  
+                 <div class="form-group col-md-12 signup-btn " style="text-align: center;margin-top: 57px;">
+                       <input type="submit" onclick="submitFrmAjax();" value="Sign Up with Email" class="bg_green bg_black_h tc_white vijay" />
+                 </div>
+                  
+                  <div class="form-group col-md-12" id="login_text" style="text-align: center;margin-top: 10px;">
+                    Already have an Ecofnb account? <a href="<%=new_user_session_path%>">Log in</a>
+                  </div>
+              </div>
+           </div>
+        </div>
+        <!-- Container /- -->
+     </div>
+     <!-- SignUp Form /- -->
+  </main>
+</div>
+
+<style type="text/css">
+  .vijay{
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    letter-spacing: 0.35px;
+    padding: 11px 25px;
+    text-transform: uppercase;
+}
+  }
+</style>
+<%#= render "devise/shared/links" %>
+<script>
+    function submitFrmAjax(){
+     $.ajax({
+            type: 'GET',
+            url: '/signup_with_email',
+            dataType: 'script',
+            data: "signup_with_email"
+          });
+    }
+</script>

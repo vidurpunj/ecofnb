@@ -1,0 +1,31 @@
+<%= render 'rooms/room_layout'%>
+
+<div class="card">
+   <!-- SignUp Form -->
+   <div class="container-fluid no-left-padding no-right-padding signup-section">
+   <!-- Container -->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-offset-1 col-md-10">
+			<p>
+			  <strong>Room Name/Number:</strong>
+			  <%= @room.name %>
+			</p>
+
+			<p>
+			  <strong>Room Category:</strong>
+			  <%= @room.room_category.category_name %>
+			</p>
+
+			<p>
+			  <strong>Stay:</strong>
+			  <%= StayHome.find(@room.stay_home_id).try(:stay_name) %>
+			</p>
+
+			<td><%= link_to 'Edit', edit_room_path(@room.stay_home.id,@room.id) %></td> |
+			<%= link_to 'Back', rooms_path %>
+		</div>
+	</div>
+</div>
+</div>
+</div>

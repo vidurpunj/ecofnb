@@ -1,0 +1,29 @@
+<div id="message"></div>
+<%= form_for(@booking, as: :booking, url: paytm_payment_path(stay_id: @bookings), html: {class: "reservation-vertical clearfix"}) do |f| %>
+      <%= f.hidden_field :start_date , class: "hidden" %>
+      <%= f.hidden_field :last_date , class: "hidden" %>
+      <%= f.hidden_field :num_of_user , class: "hidden" %>
+      <%= f.hidden_field :num_of_room , class: "hidden" %>
+      <%= f.hidden_field :room_category_id , class: "hidden" %>
+      <button type="submit" class="bg_green tc_white tc_green_h bg_white_h decoration_btn final">Book Now</button>
+    <% end %>
+    
+
+   <style type="text/css">
+    .decoration_btn
+    {
+    border-radius: 3px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    padding: 12px 25px;
+    text-decoration: none !important;
+    -webkit-transition: all 1s ease 0s;
+    -moz-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;
+    background-color: #01c26e;
+    color: #fff;
+}
+   </style>

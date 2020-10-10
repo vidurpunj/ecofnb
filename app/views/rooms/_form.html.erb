@@ -1,0 +1,47 @@
+<%= render 'rooms/room_layout'%>
+<div class="card">
+   <!-- SignUp Form -->
+   <div class="container-fluid no-left-padding no-right-padding signup-section">
+   <!-- Container -->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-offset-1 col-md-10">
+            <div class="signup-form">
+                <%= form_with(model: room, local: true) do |form| %>
+                  <% if room.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+                      <ul>
+                      <% room.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
+                  <div class="field">
+                    <%= form.label :Room_Number %>
+                    <%= form.text_field :name, class: "form-control" %>
+                  </div>
+                  <div class="field">
+                    <%= form.label :Room_Category %>
+                    <%#= byebug %>
+                    <%= form.select :room_category_id, @room_categories.collect { |p| [ p.category_name, p.id ] }, { }, { class: "form-control" }%>
+                  </div>
+
+                  <%= form.hidden_field :stay_home_id, :value => params[:stay_home_id] %>
+                  <div class="actions">
+                   <div class="form-group col-md-12 tc_dark">
+                  <div class="form-group col-md-12 signup-btn">
+                    <%= form.submit 'Submit', class: "btn" %>
+                  </div>
+                  </div>
+                  </div>
+                <% end %>
+                </div>
+             </div>
+            </div>
+         </div>
+      </div>
+</div>
+         

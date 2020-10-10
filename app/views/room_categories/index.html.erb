@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+<br>
+<h3>Room Categories</h3>
+<div class="card">
+   <!-- SignUp Form -->
+   <div class="container-fluid no-left-padding no-right-padding signup-section">
+   <!-- Container -->
+   <div class="container">
+      <div class="row">
+         <div class="col-md-offset-1 col-md-12">
+            <div class="signup-form">
+               <table class="table table-hover datatable table-bordered display responsive no-wrap">
+                <thead>
+                  <tr>
+                    <th>Category Name</th>
+                    <th>Category </th>
+                    <th>Stay</th>
+                    <!-- <th> Show</th> -->
+                   <!--  <th> Edit </th> -->
+                   <!--  <th> Delete </th> -->
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <% @room_categories.each do |room_category| %>
+                    <tr>
+                      <td><%= room_category.category_name %></td>
+                      <td><%= room_category.category_price %></td>
+                      <td><%= room_category.stay_home.stay_name%></td>
+                      <!-- <td><%#= link_to 'Show', room_category %></td> -->
+                      <!-- <td><%#= link_to 'Edit', edit_room_category_path(room_category) %></td> -->
+                      <!-- <td><%#= link_to 'Destroy', room_category, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+               <div class="form-group col-md-12 tc_dark">
+                  <div class="form-group col-md-12 signup-btn">
+                   <%= link_to 'New Room Category', new_room_category_path, class: "btn bg_green tc_white tc_green_h bg_white_h" %>
+                  </div>
+               </div>
+            </div>
+          </div>
+        </div>
+     </div>
+   </div>
+  </div>
+  <script type="text/javascript">
+  $('.datatable').DataTable({
+  });
+</script>

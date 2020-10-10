@@ -1,0 +1,138 @@
+<section class="available_rooms">
+  <div class="col-sm-12 col-md-4" id="formContent">
+    <%= form_tag available_rooms_stay_bookings_path(stay_id: @stay_home), method: :get, class:"reservation-vertical clearfix", remote: true do %>
+      <h2 class="lined-heading"><span></span></h2>
+      <div id="message">
+        <strong><%= @stay_home.stay_name %></strong>
+        <p>Price Depand on Room Type<%#= @stay_home.try(:stay_price) %></p>
+      </div>
+
+      <!-- Error message display -->
+
+      <div class="form-group" id="formContent">
+        <!-- <label for="checkin">Check-in</label> -->
+        <!-- <div class="popover-icon" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="num_of_user is from 11:00"> </div> -->
+        <!-- <input name="booking[num_of_user]" type="text" id="num_of_user" value="" class="form-control" placeholder="Num of User"/> -->
+        <div id="hide_form">
+        <strong><select type="text" list="num-of-user" placeholder="Num of Guests" name="booking[num_of_user]" class="form-control" id="num_of_user" /></strong>
+          <!-- <datalist id="num-of-user"> -->
+            <option value="" hidden>Num of Guest</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select></strong>
+          <!-- </datalist> -->
+             <br/>
+             <%#= byebug %>
+             <%#= select_tag "booking[room_category_id]", options_for_select(RoomCategory.all.collect{ |u| [u.category_name, u.id] }), class: "form-control", :prompt => 'Room Type' %>
+             <strong><%= select_tag "booking[room_category_id]", options_for_select(@stay_home.room_categories.collect{ |u| [[u.category_name, u.category_price], u.id] }), class: "form-control", :prompt => 'Room Type' %></strong>
+          
+            <%#= byebug %>
+            <%#= select_tag "booking[room_id]", options_for_select(@stay_home.room_category.collect{|rc| rc.rooms.collect{|r| r.room_price}}),:prompt => 'Room Price', class: 'form-control' %>
+            <%#= select_tag "booking[room_id]", options_for_select(@stay_home.room_category.collect { |rc| rc.rooms.collect{|a| [a.room_price, a.id] } }), class: "form-control", :prompt => 'Room Price' %></br>
+      <strong><select name="booking[num_of_room]" id="booking_num_of_room" class="form-control" placeholder="Num of rooms">
+         <option value="" hidden>Num of rooms</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select></strong><br/>
+        <!-- <label for="checkin">Check-in</label> -->
+        <!-- <div class="popover-icon" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Check-In is from 11:00"> </div> -->
+     
+  
+        <strong><input name="booking[start_date]" type="text" id="checkin" value="" class="form-control from-datepicker" placeholder="Check-in"/></strong>
+
+      <!-- </div>
+      <div class="form-group" id="formContent"> -->
+        <!-- <label for="checkout">Check-out</label> -->
+        <!-- <div class="popover-icon" data-container="body" data-toggle="popover" data-trigger="hover" data-placement="right" data-content="Check-out is from 12:00"> </div> -->
+        <br/>
+        <strong><input name="booking[last_date]" type="text" id="checkout" value="" class="form-control from-date-datepicker" placeholder="Check-out"/></strong>
+        <br/>
+      </div>
+      <div class="hidden available1_rooms" id="formContent">
+        <!-- <label for="checkout">Check-out</label> --> 
+      </div>
+      </div>
+
+      <strong><button type="submit" class="bg_green tc_white tc_green_h bg_white_h decoration_btn hide_button">Continue Booking</button></strong>
+    <% end %>
+  </div>
+</section>
+<script>
+  $( document ).ready(function() { 
+     var today = new Date();
+    $("#checkin").datepicker({
+      dateFormat: 'yy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
+      todayBtn: "linked",
+      minDate: today
+    });
+
+    $("#checkout").datepicker({
+      dateFormat: 'yy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
+      todayBtn: "linked",
+      minDate: today
+    });
+  }); 
+</script>
+<style type="text/css">
+  .wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    /*padding: 20px;*/
+  }
+  /*.fadeInDown {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }*/
+  #formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+  width: 100%;
+  max-width: 450px;
+  /*position: relative;*/
+  /*padding: 0px;*/
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
+  }
+  /*.fadeIn.fourth {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    animation-delay: 1s;
+  }*/
+
+    .decoration_btn
+    {
+    border-radius: 3px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    padding: 12px 25px;
+    /*text-decoration: none !important;
+    -webkit-transition: all 1s ease 0s;
+    -moz-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    transition: all 1s ease 0s;*/
+    background-color: #01c26e;
+    color: #fff;
+}
+
+</style>

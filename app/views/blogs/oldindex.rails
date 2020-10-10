@@ -1,0 +1,72 @@
+<style type="text/css">
+    .type-post .entry-content > a {
+        text-transform: none!important;
+    }
+</style>
+<div class="container-fluid no-left-padding no-right-padding page-banner">
+    <!-- Container -->
+    <div class="container">
+        <h3 class="tc_white">Blog Posts</h3>
+        <ol class="breadcrumb">
+            <li><a class="tc_white tc_white_h" href="/">Home</a></li>
+            <li class="active tc_white">Blogs</li>
+        </ol>
+    </div><!-- Container /- -->
+</div><!-- Page Banner /- -->
+
+        <main class="site-main">
+
+            <!-- Blog 3 Column Grid -->
+            <div class="container-fluid no-left-padding no-right-padding blog-grid blog-grid-2-col">
+                <!-- Container -->
+                <div class="container">
+                    <!-- Row -->
+                    <div class="row">
+                        <%@blogs.each do |blog|%>
+                            <div class="col-sm-6 col-xs-6">
+                                <div class="type-post">
+                                    <!-- Entry Cover -->
+                                    <div class="entry-header bg_dark2">
+                                        <h3 class="entry-title tc_white"><a class="tc_white tc_green_h" href="<%= blog_path(blog)%>"><%= blog.title%></a></h3>
+                                    </div>
+                                    <div class="entry-cover">
+                                        <a href="<%= blog_path(blog)%>"><img src="<%=blog.image.url(:thumb)%>" style="overflow: hidden; position: relative;" /></a>
+                                    </div><!-- Entry Cover /- -->
+                                    <!-- Entry Header -->
+                                    <!-- Entry Content -->
+                                    <div class="entry-content brd_color_light_gray tcp_gray2">
+                                        
+                                         <%= truncate(strip_tags((blog.try(:upper_description)) ), length: 300) %>
+                                         </p>
+                                        <a class="tc_dark brd_color_dark tc_white_h brd_color_green_h bg_green_h" href="<%= blog_path(blog)%>">Read More</a>
+                                    </div><!-- Entry Content /- -->
+                                </div>
+                            </div>
+                            <% end -%>
+                        
+                            
+                       
+
+                        
+                    </div><!-- Row /- -->
+
+                    <nav class="ow-pagination">
+                        <ul class="pagination">
+                            <% if @blogs.current_page > 1 %>
+                               <li><a href="?page=<%= @blogs.current_page - 1 %>">&laquo;</a></li>
+                            <% end %>
+                            <% (1..@blogs.total_pages).each do |page| %>
+                               <li class="<%= @blogs.current_page == page ? 'active' : '' %>"><%= link_to page, "?page=#{page}" %></li>
+                            <% end %>
+                            <% unless @blogs.total_pages == @blogs.current_page %>
+                               <li><a href="?page=<%= @blogs.current_page + 1 %>">&raquo;</a></li> 
+                            <% end %>
+                         </ul>
+                    </nav>
+
+                </div><!-- Container /- -->
+            </div><!-- Blog 3 Column Grid /- -->
+
+
+        </main>
+

@@ -1,0 +1,155 @@
+<section class="available_rooms">
+<div class="container search">
+	<div class="row search_container">
+		<div class="booking-form" >
+			<%= form_tag available_rooms_stay_bookings_path(stay_id: @stay_home), method: :get, class:"reservation-vertical clearfix", :remote=> true do %>
+			<div id="message" style="margin-bottom: 28px !important;">
+      </div>
+      <div id="hide_form">
+				<div class="col-md-6">
+					<div class="form-group">
+						<span class="form-label"></span>
+							<input name="booking[start_date]" type="text" id="checkin" value= "" class="form-control search-slt datepicker" placeholder="Check-in" required/>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<span class="form-label"></span>
+							<input name="booking[last_date]" type="text" id="checkout" value="" class="form-control from-date-datepicker" placeholder="Check-out" required/>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<!-- <span class="form-label">Room Type</span> -->
+							<%= select_tag "booking[room_category_id]", options_for_select(@stay_home.room_categories.collect{ |u| [u.category_name, u.id] }), class: "form-control search-slt", :prompt => 'Room Type', required: true %>
+					</div>
+				</div>
+				<!-- <div id="message">
+				</div> -->
+
+				<div class="col-md-4">
+					<div class="form-group">
+						<!-- <span class="form-label">Rooms</span> -->
+							<select name="booking[num_of_room]" id="booking_num_of_room" class="form-control" placeholder="Num of rooms" required>
+				        <option value="" hidden>Num of Rooms</option>
+				        <option value="1">1</option>
+				        <option value="2">2</option>
+				        <option value="3">3</option>
+				        <option value="4">4</option>
+				        <option value="5">5</option>
+			      	</select>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<!-- <span class="form-label">Guest</span> -->
+							<input type="text" name="" type="text" list="num-of-user" placeholder="Num of Guests" name="booking[num_of_user]" class="form-control" id="num_of_user" required />
+		            <!-- <option value="" hidden>Num of Guest</option>
+		            <option>1</option>
+		            <option>2</option>
+		            <option>3</option>
+		            <option>4</option>
+		            <option>5</option> -->
+        			<!-- </select> -->
+						</div>
+					</div>
+				</div>
+				  <div class="hidden available1_rooms" id="formContent">
+        <!-- <label for="checkout">Check-out</label> --> 
+          </div>
+				<div class="col-md-4">
+				</div>
+				<div class="col-md-4">
+					<!-- <div class="col-lg-3 col-md-3 col-sm-12 p-0"> -->
+						<button type="submit" class="bg_green tc_white tc_green_h bg_white_h decoration_btn hide_button">Continue Booking</button>
+          <!-- </div> -->
+				</div>
+				<div class="col-md-4">
+				</div>
+      </div>
+			<%end%>
+		</div>
+	</div>
+</div>
+</section>
+<head>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<script type="text/javascript">
+$(function () {
+  var minDate = new Date();
+    $("#search_parameters_start_date").datepicker({
+        numberOfMonths: 1,
+        dateFormat: 'yy-mm-dd',
+        minDate: minDate,
+        onSelect: function (selected) {
+            var dt = new Date(selected);
+            dt.setDate(dt.getDate() + 1);
+            $("#search_parameters_last_date").datepicker("option", "minDate", dt);
+        }
+    });
+    $("#search_parameters_last_date").datepicker({
+        numberOfMonths: 1,
+        dateFormat: 'yy-mm-dd',
+        minDate: minDate,
+        onSelect: function (selected) {
+            var dt = new Date(selected);
+            dt.setDate(dt.getDate() - 1);
+            $("#search_parameters_start_date").datepicker("option", "maxDate", dt);
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+  var  autocomplete;
+  function initAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),
+        {types: ['geocode']});
+
+  }
+  function geolocate() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var geolocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        var circle = new google.maps.Circle({
+          center: geolocation,
+          radius: position.coords.accuracy
+        });
+        autocomplete.setBounds(circle.getBounds());
+      });
+    }
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNcD7L1bPn2xaFFtU6BUhXAUU_1FdNZQI&signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
+</style>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+  <script>
+  $( document ).ready(function() {
+     var today = new Date();
+    $("#checkin").datepicker({
+      dateFormat: 'yy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
+      todayBtn: "linked",
+      minDate: today
+    });
+
+    $("#checkout").datepicker({
+      dateFormat: 'yy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
+      todayBtn: "linked",
+      minDate: today
+    });
+  });
+</script>

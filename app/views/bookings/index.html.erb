@@ -1,0 +1,55 @@
+<div class="container-fluid no-left-padding no-right-padding page-banner Login-banner">
+   <div class="container">
+      <h3 class="tc_white">Booking</h3>
+      <ol class="breadcrumb">
+      </ol>
+   </div>
+</div>
+<p id="notice"><%= notice %></p>
+<h2 align="center"><%= current_user.name %></h2>
+<div class="container">
+  <table class="table table-hover datatable table-bordered display responsive no-wrap">
+    <thead>
+      <tr class= "table-aman">
+        <th>Stay </th>
+        <th>Stay Room</th>
+        <th>Start date</th>
+        <th>Last date</th>
+        <th>Number of Guest</th>
+        <th>Number of rooms</th>
+        <th>Show</th>
+        <th>Cancel Booking</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookings.each do |booking| %>
+        <tr class= "table-aman">
+          <td><%#= booking.try(:stay_home_id) %>
+            <%= booking.stay_home.try(:stay_name) %>
+          </td>
+          <td><% booking.booking_rooms.each do |booking_room| %>
+               <span><%= Room.find(booking_room.room_id).name %></span>
+               <% end %></p></td>
+          <td><%= booking.start_date %></td>
+          <td><%= booking.last_date %></td>
+          <td><%= booking.num_of_user %></td>
+          <td><%= booking.num_of_room %></td>
+          <td><%= link_to '', booking, class: "fa fa-info-circle" %></td>
+          <td><%= link_to 'Cancel Booking', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>  
+    </tbody>
+  </table>
+</div>
+
+<br>
+<script type="text/javascript">
+  $('.datatable').DataTable({
+  });
+</script>
+<style type="text/css">
+  tr.table-aman {
+    font-size: large;
+}
+</style>
+<%#= link_to 'New Booking', new_booking_path %>

@@ -1,0 +1,42 @@
+<%= nested_form_for room_category, local: true do |form| %>
+  <% if room_category.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(room_category.errors.count, "error") %> prohibited this room_category from being saved:</h2>
+
+      <ul>
+      <% room_category.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="field">
+        <%= form.label :Category_Name %>
+        <%= form.text_field :category_name, class: "form-control" %>
+    </div>
+    <div class="field">
+        <%= form.label :Category_Price %>
+        <%= form.text_field :category_price, class: "form-control" %>
+    </div>
+    <div class="field">
+      <%= form.label :Stay_Home %>
+      <%= form.select :stay_home_id, current_merchant.stay_homes.all.collect { |p| [ p.stay_name, p.id ] }, { }, { class: "form-control" }%>
+    </div>
+    <br/>
+    <div class="col-md-6">
+                     <%= form.fields_for :stay_images do |task| %>
+                     <%= task.file_field :stay_image, class: "form-control" %>
+                     <% if task.object.stay_image and task.object.stay_image.file %>
+                     <%= image_tag task.object.stay_image.url ,size:"100x100"%>
+                     <%end%><br/>
+                     <%= task.link_to_remove "Remove this Images" %><br/>
+                     <% end %>
+                     <%= form.link_to_add "Add Stay Images", :stay_images %>
+                  </div>
+    <div class="actions">
+     <div class="form-group col-md-12 tc_dark">
+    <div class="form-group col-md-12 signup-btn">
+      <%= form.submit 'Create', class: "btn" %>
+    </div>
+<% end %>
+<br><br><br><br>

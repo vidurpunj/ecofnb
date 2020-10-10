@@ -1,0 +1,43 @@
+
+  <!-- Page Banner -->
+<!-- <div class="container-fluid no-left-padding no-right-padding page-banner no-bottom-margin"> -->
+    <!-- Container -->
+    <!-- <div class="container">
+        <h3 class="tc_white">MESSAGE</h3>
+        <ol class="breadcrumb">
+            <li><a class="tc_white tc_white_h" href="/">Home</a></li>
+            <li class="active tc_white">Message</li>
+        </ol> -->
+    <!-- </div>Container /- -->
+<!-- </div>Page Banner /- -->
+    <main class="site-main scrollpoint sp-effect1" style="background-image: url('https://image.freepik.com/free-photo/business-concept-with-copy-space-office-desk-table-with-pen-focus-analysis-chart-computer-notebook-cup-coffee-desk-vintage-tone-retro-filter-selective-focus_1418-553.jpg'); background-size: cover !important;">
+    <!-- About Section -->
+    <div class="scrollpoint sp-effect3">
+        <div class="container-fluid no-left-padding no-right-padding about-section">
+            
+               <%if @founder_message.present?%>
+                <div class="about-img" data-image="<%=asset_path(@founder_message.image.url)%>"><img width="600" height="600" style="margin-top: 58px;" src="<%=asset_path(@founder_message.image.url)%>" class="attachment-leafyplant_830_465 size-leafyplant_830_465 img-responsive" alt="" sizes="(max-width: 830px) 150vw, 830px" /></div>
+                <%end%>
+            
+            <!-- Container -->
+            <div class="container">
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-md-offset-5 col-md-7">
+                        <div class="about-content tcp_gray2">
+                            <!-- Section Header -->
+                            <div class="section-header tcp_gray">
+                                <h3 class="tc_dark"><%=@founder_message.try(:title)%></h3>
+                            </div><!-- Section Header /- -->
+                            <%= raw @founder_message.try(:description)%>
+                        </div>
+                    </div>
+                </div><!-- Row /- -->
+            </div><!-- Container /- -->
+        </div><!-- About Section /- -->
+    </div>
+</main>
+<style type="text/css">
+
+</style>
+

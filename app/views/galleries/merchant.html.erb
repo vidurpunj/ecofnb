@@ -1,0 +1,38 @@
+<div class="container-fluid no-left-padding no-right-padding page-banner gallery-masonry-banner">
+    
+  <div class="container">
+    <h3 class="tc_white">Merchant</h3>
+    <ol class="breadcrumb">
+      <li><a class="tc_white tc_white_h" href="/">Merchant</a></li>
+      <li class="active tc_white">Merchant Page</li>
+    </ol>
+  </div>
+</div>
+
+<main class="site-main">
+
+    
+    <div class="container-fluid no-left-padding no-right-padding gallery-main gallery-masonry">
+        
+        <div class="container">
+            
+            <div class="section-header tcp_gray">
+                <h3 class="tc_dark tcspan_green"><span>Merchant</span> Profile</h3>
+                     <div id="navbar" class="collapse navbar-collapse">
+                          <% if current_merchant.present? %>
+                            <%= link_to "Log out", destroy_merchant_session_path, :method => :delete %>
+                            <% else %>
+                            <%= link_to "Login", new_merchant_session_path %>
+                            <% end %>
+                            <% if !current_merchant.present? %><br/>
+                            <%= link_to "Signup", new_merchant_registration_path %> 
+                            <%end %>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</main>
+
+

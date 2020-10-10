@@ -1,0 +1,809 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"su",
+				"subject_book"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"type",
+				"type_id"
+			],
+			[
+				"ty",
+				"Type"
+			],
+			[
+				"fa",
+				"facilities"
+			],
+			[
+				"bor",
+				"border\tproperty"
+			],
+			[
+				"fo",
+				"font-size\tproperty"
+			],
+			[
+				"u",
+				"uppercase\ttext-transform"
+			],
+			[
+				"text",
+				"text-transform\tproperty"
+			],
+			[
+				"mar",
+				"margin-top\tproperty"
+			],
+			[
+				"btn",
+				"btn-danger"
+			],
+			[
+				"col",
+				"col-md-4"
+			],
+			[
+				"st",
+				"style\tAttr"
+			],
+			[
+				"s",
+				"slt\tstylesheet_link_tag"
+			],
+			[
+				"margin",
+				"margin-left\tproperty"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"tra",
+				"transition\tproperty"
+			],
+			[
+				"a",
+				"auto\toverflow-y"
+			],
+			[
+				"local",
+				"localhost"
+			],
+			[
+				"fon",
+				"font-size\tproperty"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"ho",
+				"homestay"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"ac",
+				"actual_height"
+			],
+			[
+				"act",
+				"actual_height"
+			],
+			[
+				"cha",
+				"charegeable_height"
+			],
+			[
+				"G",
+				"GlassInvoice"
+			],
+			[
+				"give",
+				"given_width"
+			],
+			[
+				"dle",
+				"delete_details"
+			],
+			[
+				"i",
+				"i\tTag"
+			],
+			[
+				"lin",
+				"link\tTag"
+			],
+			[
+				"Si",
+				"SignUp"
+			],
+			[
+				"font-s",
+				"font-size\tproperty"
+			],
+			[
+				"padd",
+				"padding\tproperty"
+			],
+			[
+				"c",
+				"contain\tbackground-size"
+			],
+			[
+				"bac",
+				"background-color\tproperty"
+			],
+			[
+				"nav",
+				"nav-link"
+			],
+			[
+				"impor",
+				"important"
+			],
+			[
+				"tr",
+				"transform\tproperty"
+			],
+			[
+				"co",
+				"cover\tbackground-size"
+			],
+			[
+				"con",
+				"contact_us"
+			],
+			[
+				"dow",
+				"downvote"
+			],
+			[
+				"up",
+				"upvote"
+			],
+			[
+				"blo",
+				"blog"
+			],
+			[
+				"btn-s",
+				"btn-success"
+			],
+			[
+				"sli",
+				"slider"
+			],
+			[
+				"cp",
+				"Copyright"
+			],
+			[
+				"eco",
+				"ecofnb"
+			],
+			[
+				"id",
+				"room_category_id"
+			],
+			[
+				"room_category",
+				"room_category_id"
+			],
+			[
+				"stay",
+				"stay_homes"
+			],
+			[
+				"w",
+				"weekly"
+			],
+			[
+				"cate",
+				"room_category"
+			],
+			[
+				"Car",
+				"Category"
+			],
+			[
+				"Room",
+				"room_category"
+			],
+			[
+				"comm",
+				"commenter_website"
+			],
+			[
+				"be",
+				"belongs_to"
+			],
+			[
+				"comme",
+				"comments"
+			],
+			[
+				"Co",
+				"Comment"
+			],
+			[
+				"Com",
+				"CommentsController"
+			],
+			[
+				"com",
+				"comment"
+			],
+			[
+				"but",
+				"button-rouded"
+			],
+			[
+				"bu",
+				"button-big"
+			],
+			[
+				"Re",
+				"Reply"
+			],
+			[
+				"form",
+				"form-control"
+			],
+			[
+				"we",
+				"Website"
+			],
+			[
+				"inp",
+				"input-mf"
+			],
+			[
+				"for",
+				"form-control"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"matr",
+				"margin-left\tproperty"
+			],
+			[
+				"out",
+				"outline-style\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 164.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/ryientsoft-dell/abcpuppy"
+	],
+	"file_history":
+	[
+		"/home/ryientsoft-dell/abcpuppy/Gemfile",
+		"/home/ryientsoft-dell/Patient_appointment_booking_system/Gemfile",
+		"/home/ryientsoft-dell/Patient_appointment_booking_system/app/views/layouts/application.html.erb",
+		"/home/ryientsoft-dell/Patient_appointment_booking_system/app/controllers/application_controller.rb",
+		"/home/ryientsoft-dell/Patient_appointment_booking_system/config/environments/development.rb",
+		"/home/ryientsoft-dell/Doctor-Appointments-Rails/log/development.log",
+		"/home/ryientsoft-dell/Doctor-Appointments-Rails/Gemfile",
+		"/home/ryientsoft-dell/poojak/Blogger_app/Gemfile",
+		"/home/ryientsoft-dell/Doctor-Appointments-Rails/config/database.yml",
+		"/home/ryientsoft-dell/poojak/nested-comments/Gemfile",
+		"/home/ryientsoft-dell/ChopChowSD/.env",
+		"/home/ryientsoft-dell/ChopChowSD/server.js",
+		"/home/ryientsoft-dell/ChopChowSD/db/dbPostgress/config/db_connection.js",
+		"/.env",
+		"/home/ryientsoft-dell/abcpuppy/app/views/layouts/_top_nav.html.erb",
+		"/home/ryientsoft-dell/abcpuppy/Gemfile.lock",
+		"/home/ryientsoft-dell/bbs/firebase-auth/login.js",
+		"/home/ryientsoft-dell/bbs/firebase-auth/main.js",
+		"/home/ryientsoft-dell/bbs/firebase-auth/main.html",
+		"/home/ryientsoft-dell/react-firebase-authentication/firebase.json",
+		"/home/ryientsoft-dell/bbs/firebase-auth/fireBase.js",
+		"/home/ryientsoft-dell/bbs/firebase-auth/login.html",
+		"/home/ryientsoft-dell/react-firebase-authentication/src/firebaseConfig.js",
+		"/home/ryientsoft-dell/react-firebase-authentication/src/App.js",
+		"/home/ryientsoft-dell/bbs/cooking-king/firebase.json",
+		"/home/ryientsoft-dell/bbs/cooking-king/database.rules.json",
+		"/home/ryientsoft-dell/bbs/cooking-king/.gitignore",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/views/layouts/application.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/ecofnb/index.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/stay/_search1.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/ecofnb/_slider1.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/ecofnb/about.html.erb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/assets/javascripts/application.js",
+		"/home/ryientsoft-dell/workspace/ecofnb/config/initializers/active_admin.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/config/initializers/ckeditor.rb",
+		"/home/ryientsoft-dell/workspace/ecofnb/app/assets/javascripts/dashboard.js",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/config/initializers/active_admin.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/admin/subject_books.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/views/subject_books/index.html.erb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/assets/stylesheets/active_admin.scss",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/assets/javascripts/active_admin.js",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/config/initializers/active_admin_editor.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/assets/stylesheets/application.css.scss",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/Gemfile",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/assets/javascripts/ckeditor/config.js",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/views/blogs/_form.html.erb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/config/routes.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/config/initializers/assets.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/config/application.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/admin/sub_types.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/admin/types.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/admin/query_froms.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/assets/javascripts/active_admin.coffee",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/db/migrate/20200208035425_create_subject_books.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/db/migrate/20200208035108_create_sub_types.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/db/migrate/20200208032031_create_types.rb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/db/seeds.rb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/ecofnb/all_stay_homes.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/ecofnb/_filter_stay.html.erb",
+		"/home/ryientsoft-dell/workspace/ecofnb/app/views/faqs/index.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/config.ru",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/controllers/ecofnb_controller.rb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/stay/_show.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets/stylesheets/application.css.scss",
+		"/home/ryientsoft-dell/Downloads/Bootstrap template Unzip/colorlib-booking-6/index.html",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets/stylesheets/css2/_custom.scss",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/ecofnb/_search.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/stay/_search.html.erb",
+		"/home/ryientsoft-dell/Downloads/Bootstrap template Unzip/casahotel/css/style.css",
+		"/home/ryientsoft-dell/Downloads/Bootstrap template Unzip/casahotel/index.html",
+		"/home/ryientsoft-dell/workspace/ecofnb/app/models/stay_home.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/uploaders/media_uploader.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/db/migrate/20200206181111_categories.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/db/schema.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/views/blogs/index.html.erb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/views/blogs/show.html.erb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/controllers/categories_controller.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/views/categories/index.html.erb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/db/migrate/20200119194533_create_network_securities.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/views/homes/index.html.erb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/views/devise/registrations/edit.html.erb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/views/devise/registrations/new.html.erb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/models/user.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/controllers/application_controller.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/views/layouts/_header.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/layouts/_headersafe.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/controllers/bookings_controller.rb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/bookings/search_rooms.js.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets/javascripts/application.js",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/config/routes.rb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/stay/_new_release.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/stay/new_release.js.erb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/.env",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/config/environments/development.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/config/environments/production.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/config/environment.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/config/application.yml",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/controllers/omniauth_callbacks_controller.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/controllers/blogs_controller.rb",
+		"/home/ryientsoft-dell/bbs/backbenchersstudy/app/views/blogs/edit.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/layouts/_footer.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/ecofnb/_reviewslider.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/controllers/application_controller.rb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets/stylesheets/css/_color.scss",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets/stylesheets/css/_custom.scss",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/ecofnb/_feature.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/ecofnb/_staycategory.html.erb",
+		"/home/ryientsoft-dell/workspace/ecofnb/app/views/ecofnb/_welcome.html.erb",
+		"/home/ryientsoft-dell/workspace/ecofnb_2.0/Gemfile",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets/javascripts/cdn/jquery-3.4.1.js",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/ecofnb/_about_us.html.erb",
+		"/home/ryientsoft-dell/Downloads/Bootstrap template Unzip/colorlib-booking-3/index.html",
+		"/home/ryientsoft-dell/Downloads/Bootstrap template Unzip/colorlib-booking-3/css/style.css",
+		"/home/ryientsoft-dell/Downloads/Bootstrap template Unzip/colorlib-booking-1/css/style.css",
+		"/home/ryientsoft-dell/Downloads/Bootstrap template Unzip/colorlib-booking-1/index.html",
+		"/home/ryientsoft-dell/workspace/ecofnb/app/views/galleries/_index.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/galleries/_testgallery.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/layouts/application.html.erb",
+		"/home/ryientsoft-dell/workspace/ecofnb/app/assets/javascripts/js/jquery.themepunch.tools.min.js",
+		"/home/ryientsoft-dell/workspace/ecofnb/app/assets/javascripts/js/lib.js",
+		"/home/ryientsoft-dell/workspace/ecofnb/app/views/galleries/index.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/galleries/index.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets/stylesheets/cdn/jquery.fancybox.css",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets/javascripts/cdn/ekko-lightbox.min.js",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets/stylesheets/css2/_responsive.scss",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/layouts/_header.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/views/layouts/_test.html.erb",
+		"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/public/assets/application-e80d23d650b8713ddc44c8ace570a17ac3738a43043b96ff7378a21d2f682baa.css"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 105.0,
+		"where_history":
+		[
+			"/home/ryientsoft-dell/abcpuppy/app/views",
+			"/home/ryientsoft-dell/workspace/ecofnb",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/bbs/backbenchersstudy",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/Videos",
+			"/home/ryientsoft-dell/bbs/backbenchersstudy",
+			"/home/ryientsoft-dell/Videos/newECOFNB",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/Videos",
+			"/home/ryientsoft-dell/Videos/newECOFNB",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/workspace/ecofnb",
+			"/home/ryientsoft-dell/Videos/newECOFNB",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/app-mvp-phoenix",
+			"/home/ryientsoft-dell/workspace",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/workspace/ryientsoft/app",
+			"/home/ryientsoft-dell/Videos/newECOFNB",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets/stylesheets",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app",
+			"/home/ryientsoft-dell/Videos/newECOFNB",
+			"/home/ryientsoft-dell/workspace/ecofnb",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/Videos/newECOFNB",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/Videos/newECOFNB",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/Videos/newECOFNB",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets/stylesheets",
+			"/home/ryientsoft-dell/workspace/ecofnb/app",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/Videos/newECOFNB",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets",
+			"/home/ryientsoft-dell/Videos/newECOFNB",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0",
+			"/home/ryientsoft-dell/Videos/newECOFNB/ecofnb_version_2.0/app/assets/stylesheets/css",
+			"/home/ryientsoft-dell/Videos/newECOFNB"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"tinymce",
+			"config.action_mailer.default_url_options",
+			"config.action_mailer",
+			"Modal",
+			"modal",
+			"Details",
+			"View Details",
+			"956-377-0011",
+			"false",
+			"true",
+			"false",
+			"ckeditor",
+			"ck",
+			"c",
+			"Stay",
+			"stay",
+			"Stay",
+			"stay",
+			"Stay",
+			"stay",
+			"Stay",
+			"stay",
+			"Stay",
+			"stay",
+			"Stay",
+			"stay",
+			"Stay",
+			"stay",
+			"Stay",
+			"stay_id",
+			"collapseOne",
+			"span.total-review-txt",
+			".review-rate.texdat-right.text-right",
+			": ",
+			"h3.tc_dark",
+			"h3.tc_dark {\n    color: #2c5406;\n}",
+			".widget-area .widget",
+			"booking",
+			"address",
+			"booking-form",
+			"section",
+			"border",
+			"next",
+			"section",
+			"search",
+			";\n",
+			"blog",
+			".bg-light",
+			".bg",
+			"body",
+			"end",
+			"section.ftco-section.ftco-no-pb.ftco-no-pt",
+			"ftco-section ftco-no-pb ftco-no-pt",
+			"search",
+			"/assets/popper.min.js.map",
+			"#portfolio .portfolio-item .portfolio-link .portfolio-hover",
+			"logo",
+			">\n",
+			".header-style-2 .navbar-expand-lg .navbar-nav .nav-link",
+			"section#features img",
+			"section.services-area ul",
+			";\n",
+			"section.services-area ul",
+			"button",
+			"section.services-area ul li",
+			"section#features .media i.fa",
+			"section.services-area .sinfo",
+			"services-area",
+			"section.services-area",
+			"section.services-area .sinfo",
+			"about .about-item i.fa",
+			"section#about .about-item i.fa",
+			"2",
+			"button",
+			"filter",
+			"filters",
+			"css",
+			"min",
+			".header-style-1 .navbar-nav, header .navbar-nav",
+			"navbar-nav.mr-auto",
+			"(max-width: 575px) and (min-width: 280px)",
+			"name",
+			">\n",
+			"switch",
+			".navbar",
+			"radius",
+			"link-to-portfolio",
+			".navbar-brand img",
+			"dropdown-item",
+			"nav-link",
+			"String.replace",
+			"def replace",
+			"\n  ",
+			"300",
+			"overflow-x",
+			"hidden",
+			"50",
+			"zoom-anim-dialog mfp-hide small-dialog",
+			"ow_wel-2",
+			"we",
+			".team-content",
+			"team",
+			"2019",
+			"ow_wel",
+			"ow_wel\now_wel\now_wel\now_wel",
+			"ow_wel",
+			"dialog",
+			"tc_green_h",
+			"\"mfp-content",
+			"#ow_wel-2",
+			"READ MORE",
+			"raw",
+			"openCity",
+			"truncate",
+			"London",
+			"Check in item",
+			"option",
+			"Search Box",
+			"section",
+			"section#next",
+			"next",
+			"section bg-light",
+			"aman.ammu593@gmail.com",
+			"aman.ammu593",
+			"email",
+			";\n",
+			"banner",
+			".page-banner"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/home/ryientsoft-dell/Doctor-Appointments-Rails"
+		},
+		{
+			"path": "/home/ryientsoft-dell/Patient_appointment_booking_system"
+		},
+		{
+			"path": "/home/ryientsoft-dell/abcpuppy"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 133.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"gemfile",
+				"workspace/ecofnb_2.0/Gemfile"
+			],
+			[
+				"routes",
+				"glass_invoice_generator/config/routes.rb"
+			],
+			[
+				"route",
+				"glass_invoice_generator/config/routes.rb"
+			],
+			[
+				"rou",
+				"workspace/ecofnb/config/routes.rb"
+			],
+			[
+				"blogs",
+				"ecofnb/app/controllers/blogs_controller.rb"
+			],
+			[
+				"schema",
+				"bbs/backbenchersstudy/db/schema.rb"
+			],
+			[
+				"sche",
+				"ecofnb/db/schema.rb"
+			],
+			[
+				"gem",
+				"ecofnb/Gemfile"
+			],
+			[
+				"booking",
+				"workspace/ecofnb/app/models/booking.rb"
+			],
+			[
+				"booking_date",
+				"workspace/ecofnb/app/models/booking_date.rb"
+			],
+			[
+				"booking_d",
+				"workspace/ecofnb/app/admin/booking_dates.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 827.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 251.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

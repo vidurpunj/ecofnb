@@ -1,0 +1,28 @@
+
+aws_key_id: ""
+aws_key_secret: ""
+
+# =============================================
+PAYTM_MERCHANT_KEY: 'jn_x@ePWzesESYHh'
+MID: 'gYtQVO93169847575074'
+WEBSITE: 'WEBSTAGING'
+INDUSTRY_TYPE_ID: 'Retail'
+CHANNEL_ID: 'WEB'
+payment_url: "https://securegw-stage.paytm.in/order/process"
+CALLBACK_URL: "http://localhost:3000/confirm_payment"
+HOST_URL: localhost:3000
+
+SMTP_PORT: '25'
+SMTP_USER: 'abc'
+SMTP_PASS: 'abc@gmail.com'
+MAIL_FROM: 'abc@gmail.com'
+SMTP_DOMAIN: 'smtp.sendgrid.net'
+SMTP_ADDRESS: 'smtp.sendgrid.net'
+
+FACEBOOK_CLIENT_ID: 441375030027550
+FACEBOOK_CLIENT_SECRET: e8c4847df1c9b5c60979db64024b4e8b
+# GOOGLE_API_KEY: AIzaSyCNcD7L1bPn2xaFFtU6BUhXAUU_1FdNZQI
+GOOGLE_API_KEY: AIzaSyDUEabLPZXgzpbWtKOlhknpe-QKGndY5bc
+
+GOOGLE_CLIENT_ID: 544899659019-9ml05m7jc3p579s7h3gkr9bf25455lc6.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET: A4JRmnfyPIVcMCFM2gwKxlN3

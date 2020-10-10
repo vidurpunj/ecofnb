@@ -1,0 +1,93 @@
+<!-- Page Banner -->
+<div class="container-fluid no-left-padding no-right-padding page-banner Login-banner">
+   <!-- Container -->
+   <div class="container">
+      <h3 class="tc_white"> GUEST LOGIN</h3>
+      <ol class="breadcrumb">
+         <!-- <li class="active tc_white">Login</li> -->
+      </ol>
+   </div>
+   <!-- Container /- -->
+</div>
+<!-- Page Banner /- -->
+<main class="site-main">
+   <!-- SignUp Form -->
+   <div class="container-fluid no-left-padding no-right-padding signup-section">
+      <div class="container">
+         <div class="row">        
+            <div class="col-md-offset-1 col-md-10">
+               <div class="signup-form">
+                  <div class="col-md-6">
+                  <%= link_to "/auth/google_oauth2", class:"btn btn-block btn-social btn-google" do %>
+                     <span class="fa fa-google"></span> login with Google+
+                  <% end %>
+               </div>
+               <div class="col-md-6">
+                  <%= link_to "/auth/facebook", class:"btn btn-block btn-social btn-facebook" do %>
+                      <span class="fa fa-facebook"></span> login with Facebook
+                  <% end %>
+                 </div> 
+               
+                  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <%= devise_error_messages! %>
+                  <%=render 'devise/shared/error_message'%>
+                  <div class="form-group col-md-12">
+                     <%= f.label :email %>
+                     <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Email",required: :true  %>
+                  </div>
+                  <div class="form-group col-md-12">
+                     <label>Password</label>
+                     <%= f.password_field :password, autofocus: true, autocomplete: "current-password", :class => "form-control brd_color_gray brd_color_gray_h tc_dove_gray", placeholder: "Password",required: :true  , value: "" %>
+                     <span toggle="#user_password" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                  </div>
+                  <% if devise_mapping.rememberable? -%>
+                  <div class="form-group col-md-12">
+                     <%= f.check_box :remember_me %>
+                     <%= f.label :remember_me %><br>
+                     <%#= link_to "Forgot your password?", new_password_path(resource_name) %>
+                  </div>
+
+                  <% end -%>
+                  
+                  <div class="form-group col-md-12 signup-btn">
+                     <input type="submit" value="Login" class="bg_green bg_black_h tc_white" />
+                  </div>
+
+                  <div class="form-group col-md-12" style="text-align: center; margin-top: 14px;">
+                    <strong>Don’t have an Ecofnb account?</strong>&nbsp;&nbsp;<button type="button" class="btn btn-warning"><a href="<%=new_user_registration_path%>">Sign up</button></a><br><br><strong>Forgot Your Password ?</strong>&nbsp;&nbsp;<button type="button" class="btn btn-success"><a href="<%= new_password_path(resource_name)%>">Click Me</button></a>
+                   </div>
+                  <%end%>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- SignUp Form /- -->
+</main>
+<%#= render "devise/shared/links" %>
+<style type="text/css">
+  .field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  z-index: 2;
+}
+.signup-form > form .signup-btn {
+  padding-top: 0 !important;
+}
+
+</style>
+<script type="text/javascript">
+  $(".toggle-password").click(function() {
+
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+</script>

@@ -1,0 +1,36 @@
+ <div class="container-fluid no-left-padding no-right-padding gallery-main gallery-masonry">
+        <!-- Container -->
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header tcp_gray">
+                <h3 class="tc_dark tcspan_green"><span>Photo</span> Gallery</h3>
+            </div><!-- Section Header /- -->
+            <!-- Gallery Filter -->
+            <div class="gallery-category">
+                <ul id="filters">
+                    <li><a class="active tc_dark tc_dark_h" data-filter="*" href="#" title="Show All">SHOW ALL</a></li>
+                    <% @gallery_types.each do |g_type|%>
+                        <li><a class="tc_dark tc_dark_h" data-filter=".<%=g_type.title%>" href="#" title="<%g_type.title%>"><%= g_type.title %></a></li>
+                        <%end%>
+                </ul>
+            </div><!-- Gallery Filter /- -->
+        </div><!-- Container /- -->
+        <!-- Gallery List -->
+        <div class="row gallery-list">
+          <% galleries.each do |gallery_l|%>  
+            <div class="col-md-3 col-sm-4 col-xs-6 gallery-box <%=gallery_l.pg_type%>">
+                <div class="gallery-content">
+                    
+                    <i><img src="<%= gallery_l.image.url%>" alt="Gallery"  class="galleryimagesize"/></i>
+                    <div class="gallery-detail">
+                        <a class="zoom" href="<%=gallery_l.image.url%>"><i class="fa fa-picture-o"></i></a>
+                        <a href="/"><i class="fa fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+           <% end %> 
+            
+        </div><!-- Gallery List /- -->
+        <div class="clearfix"></div>
+        
+    </div><!-- Gallery Masonry /- -->

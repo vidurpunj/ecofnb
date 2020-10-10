@@ -1,0 +1,63 @@
+<!-- Page Banner -->
+<!-- <div class="container-fluid no-left-padding no-right-padding page-banner no-bottom-margin"> -->
+    <!-- Container -->
+   <!--  <div class="container">
+        <h3 class="tc_white">ABOUT US</h3>
+        <ol class="breadcrumb">
+            <li><a class="tc_white tc_white_h" href="/">Home</a></li>
+            <li class="active tc_white">About Us</li>
+        </ol> -->
+    <!-- </div>Container /- -->
+<!-- </div>Page Banner /- -->
+<main class="site-main scrollpoint sp-effect2">
+  <!-- style="background-image: url('https://img.freepik.com/free-photo/ecology-child-human-hands-holding-big-plant-tree-with-blurred-background-world-environment-world_33807-610.jpg?size=626&ext=jpg'); background-size: cover;" -->
+  <center>
+    <%#= image_tag ("https://images.unsplash.com/photo-1470429346530-f5590bff80d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=751&q=80"), height: "500px", width: "1285px", class: 'img-responsive animated bounce delay-3s' %>
+  </center>
+    <!-- About Section -->
+  <div class="container-fluid no-left-padding no-right-padding about-section scrollpoint sp-effect3"> 
+    <div class="container">
+      <!-- Row -->
+      <div class="row">                
+        <div class="about-content tcp_gray2 scrollpoint sp-effect1">
+            <!-- Section Header -->
+            <div class="section-header">
+             <center>
+                <h3 class="" id= "scss"><br><%=@about_us.try(:title)%></h3>
+              </center>
+            </div><!-- Section Header /- -->
+          <div >
+                <%= raw @about_us.try(:description)%>
+            </div>
+        </div>
+      </div>
+    </div><!-- Row /- -->
+  </div><!-- Container /- -->
+    <!-- </div>About Section /- -->
+</main>
+<style type="text/css">
+  h3#scss {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 60px !important;
+    color: #000 !important;
+    font-weight: bold !important;
+    line-height: 0px !important;
+    letter-spacing: 0.9px !important;
+    margin-bottom: 12px !important;
+    margin-top: -6px !important;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 992px) {
+  .site-main{
+    background-size: contain;
+
+}
+}
+@media screen and (max-width: 600px) {
+  .site-main{
+    background-size: contain;
+}
+}
+</style>
+
+

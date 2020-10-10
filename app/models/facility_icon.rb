@@ -1,0 +1,2 @@
+class FacilityIcon < ApplicationRecord
+end

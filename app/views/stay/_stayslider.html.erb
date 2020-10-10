@@ -1,0 +1,21 @@
+<!--Slider Start-->
+<section id="home-slider" class="owl-carousel owl-theme wf100 scrollpoint sp-effect2">
+  <% @stay_home.stay_images.each do |stay_img| %>
+  <div class="item">
+    <div class="slider-caption h2slider scrollpoint sp-effect1">
+      <div class="container">
+        <!-- <a href="<%#= new_stay_booking_path(@stay_home) %>" class="active">Book Now</a>  -->
+      </div>
+    </div>
+    <img src="<%= stay_img.stay_image.url %>" alt="<%= @stay_home.stay_name%>room image" />
+  </div>
+  <%end%>
+</section>
+<!--Slider End-->
+
+<style type="text/css">
+
+
+
+</style>
+

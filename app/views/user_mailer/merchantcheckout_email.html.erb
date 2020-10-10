@@ -1,0 +1,41 @@
+<html>
+   <head>
+      <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+   </head>
+   <body>
+      <p align="justify"><a class="navbar-brand" href="/"><img src="https://ecofnb.s3.ap-south-1.amazonaws.com/logo/logo121.png" alt="logo" height="100" width="100"></a></p>
+      
+<p align="justify"><span style="font-family: Calibri, serif;">Dear <%= @merchant.name %>,</span></p>
+<p align="justify"><span style="font-family: Calibri, serif;">Congratulations! Your booking is booked by <%= @user.name%></span></p>
+<p align="justify"><span style="font-family: Calibri, serif;">Your booking with <%= @booking_data.stay_home.stay_name %> at <%= @booking_data.stay_home.city %> has been reserved under your name.</span></p>
+<p align="justify"><span style="font-family: Calibri, serif;">At ECOFNB, we offer you the Organic Stay and lodging to live a stress-free life and enjoy the peaceful natural environment.</span></p>
+<p align="justify"><span style="font-family: Calibri, serif;">Thank you for choosing us!</span></p>
+<p align="justify"><br /> </p>
+<p align="justify"><span style="background-color: #000000;"><span style="color: #ffffff;"><span style="font-family: Calibri, serif;"><strong>Booking Details</strong></span></span><span style="font-family: Calibri, serif;"><strong>:</strong></span></span></p>
+<p align="justify"><span style="font-family: Calibri, serif;"><strong> Booking ID: </strong><%=@booking_data.id%>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<strong>Room :</strong> <% @booking_data.booking_rooms.each do |booking_room| %>
+               <span><%= Room.find(booking_room.room_id).name %></span>
+               <% end %> </span></p>
+<p align="justify"><span style="font-family: Calibri, serif;"><strong>Property Name:</strong>  <%= @booking_data.stay_home.stay_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<strong>Address: </strong> <%= @booking_data.stay_home.try(:address) %></span></p>
+<p align="justify"><span style="font-family: Calibri, serif;"> <strong> Check-in:</strong> <%= @booking_data.start_date %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Location on Map: </strong> <iframe src="https://maps.google.com/maps?q=<%=@booking_data.stay_home.latitude%>, <%=@booking_data.stay_home.longitude%> &z=15&output=embed" width="200" height="200" frameborder="0" style="border:0"></iframe></span></p>
+<p align="justify"><span style="font-family: Calibri, serif;"> <strong>Check-out:</strong> <%= @booking_data.last_date %></span></p>
+<p align="justify"><span style="font-family: Calibri, serif;"><strong> Total Amount Paid: <%= @create_payment.txn_amount %></strong></span></p>
+<p align="justify">&nbsp;</p>
+<p align="justify"><span style="font-family: Calibri, serif;"><span style="font-size: large;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PROPERTY IMAGE</strong></span></span></p>
+<p>
+    <!-- <a href="/stay_homes/<%=@booking_data.stay_home.id%>"> -->
+      <%= link_to stay_url(@booking_data.stay_home.id) do %>
+     <img src="<%= @booking_data.stay_home.stay_images.first.stay_image.url %>" height="200" width="60%"><% end %>
+</p>
+<p align="justify"><span style="font-family: Calibri, serif;">To review your booking details, click on ----- property link----</span></p>
+<p align="justify"><span style="font-family: Calibri, serif;"><strong>Room Details:</strong></span></p>
+<p align="justify"><span style="font-family: Calibri, serif;"> <strong>Number of Guests:</strong>  <%= @booking_data.num_of_user %></span></p>
+<p align="justify"><span style="font-family: Calibri, serif;"><strong>Number of Rooms: </strong> <%= @booking_data.num_of_room %></span></p>
+<p align="justify"><span style="font-family: Calibri, serif;"><strong> Amenities: </strong><% @booking_data.stay_home.stayhome_facilities.each do |stay_fa| %>
+                  <%=  stay_fa.facility.name %>,
+                  <% end %></span></p>
+<p align="justify"><span style="font-family: Calibri, serif;"><strong>Stay Rules:</strong>  <%= raw @booking_data.stay_home.try(:stay_rule)%> </span></p>
+<p align="justify"><span style="font-family: Calibri, serif;"><strong>Cancellation Policy:</strong>   <%= raw @booking_data.stay_home.try(:cancellation_policy)%></span></p>
+<p align="justify"><span style="font-family: Calibri, serif;"><strong>Need Help?</strong></span></p>
+<p align="justify"><span style="font-family: Calibri, serif;">For any further assistance related to your booking, you can contact us at +917078877002 or email us at info@ecofnb.com</span></p>
+   </body>
+</html>

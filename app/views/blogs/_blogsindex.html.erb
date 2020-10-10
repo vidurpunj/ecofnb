@@ -1,0 +1,26 @@
+<section class="p80 blog scrollpoint sp-effect3">
+  <!-- <div class="blog-large"> -->
+    <div class="container">
+      <div class="row">
+        <!--Blog Small Post Start-->
+        <%@blogs.each do |blog|%>
+          <div class="col-md-6 col-sm-6">
+            <div class="blog-post">
+              <div class="blog-thumb">
+                <img src="<%=blog.image.url(:thumb)%>"/>
+                <a href="<%= blog_path(blog)%>"><i class="fa fa-link"></i></a>
+              </div>
+              <div class="post-txt">
+                <ul class="post-meta">
+                  <li> <a href="<%= blog_path(blog)%>"><i class="fa fa-calendar-alt"></i> &nbsp;<%#= blog.created_at.strftime("%Y-%m-%d") %><%= time_ago_in_words(blog.created_at) %> ago</a> </li>
+                  <li> <a href="/"><i class="fa fa-user"></i>AUTHOR: ECOFNB</a></li>
+                </ul>
+                <h5><a href="<%= blog_path(blog)%>"><%= blog.title%></a></h5>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <!-- </div> -->
+</section>

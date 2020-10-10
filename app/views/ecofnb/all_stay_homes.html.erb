@@ -1,0 +1,363 @@
+<br>
+<br>
+<%# byebug %>
+<%#= render 'search'%>
+<%#if params[:search_parameters].present?%>  
+<style type="text/css">
+  .main-container {
+    margin-top: 200px !important;
+}
+</style>  
+
+<div class="row"> 
+   <div class="col-md-2"> 
+     <%= render 'filter_stay' %>
+   </div>
+   <% if @stay_homes.present? %>  
+   <div class="col-sm-9">
+         <main class="site-main">
+              <% if flash[:alert] %>
+               <div class="alert"><%= flash[:alert] %></div>
+              <% end %>
+              <div class="container-fluid no-left-padding no-right-padding gallery-main gallery-masonry">
+              <div class="row gallery-list">
+                <div class="col-md-12 gallery-list">
+                <% @stay_homes.each do |homestay|%> 
+                    <div class="gallery-slide">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="gallery-box environment">
+                          <div class="gallery-content">
+                            <i><a href="<%= stay_path(homestay)%>"><img src="<%= homestay.image_select%>" alt="<%= homestay.stay_name%>" /></a></i>
+                            <div class="gallery-detail">
+                          <a class="zoom" href="<%= homestay.image_select%>"><i class="fa fa-picture-o"></i></a>
+                          <a href="<%=stay_path(homestay)%>"><i class="fa fa-link"></i></a>
+                          </div>
+                        </div>
+                        </div>
+                      </div>
+                        <div class="col-md-8">
+                          <div class="row">
+                              <div class="col-md-8">
+                              <div class="left_blog">
+                                  <% if homestay.avg_rating==0.0 %>
+                                   <% (1 .. 5.to_i).each do |t|%>
+                                   <span class="fa fa-star-empty"></span>
+                                   <%end %>
+                                   <%else%>
+                                   <% (1 .. homestay.avg_rating.to_i).each do |t|%>
+                                   <span class="fa fa-star checked"></span>
+                                   <% end %>
+                                   <% if homestay.avg_rating.to_s.split('.')[1].to_i > 0 %>
+                                   <span class="fa fa-star-half abc"></span>
+                                   <% end %>
+                                   <%# byebug %>
+                                  <!--  <a class="bg_green tc_white tc_green_h bg_white_h" href="#">Stay</a> -->
+                                  <% end %>
+                                  <div>
+                                    <h3 class="tc_dark">
+                                      <a class="tc_dark" href="<%= stay_path(homestay)%>"><%= homestay.stay_name%>
+                                      </a>
+                                    </h3>
+                                    <h4 class="category"><%= homestay.stay.name%></h4>
+                                  </div>
+                                  <div><span class="tc_gray"><%= homestay.address%></span></div><br>
+                                  <div><span class="small aman">LANDMARK:&nbsp;&nbsp;<%=homestay.try(:location_description)%></span></div><br>
+                                  <!-- <a data-toggle='popover' title="<%= homestay.try(:cancellation_policy) %>" href="#">cancellation policy</a>  -->
+                                  <div class="hotel-services">
+                                    <ul>
+                                    <li class="small">
+                                      <span>
+                                        <% homestay.facilities.each do |icon|%>
+                                        
+                                      <i title="<%= icon.name%>" class="<%= icon.feature_icon %>"></i>
+                                    <%end%></span>
+                                      </i>
+                                    </li>
+                                    </ul>
+                                  </div>
+                                  </div>
+                               </div>
+                               
+                               <div class="col-md-4">
+                               <div class="right_blog">
+                                  <div class="review-rate texdat-right text-right">
+                                  <a class="bg_green tc_white tc_green_h bg_white_h"><%= homestay.avg_rating %>/5</a>
+                                  </div>
+                                  <div class="reviews-count text-right">
+                                   <span class="total-review-txt"><a><%= homestay.rating_reviews.count %> Review</a></span>
+                                   </div>
+                                  
+                                  <div class="text-right">
+                                  <strike><i class="fa fa-rupee"></i><%= ((homestay.room_categories.first.category_price)*25)/100+homestay.room_categories.first.category_price %></strike>
+                                <div class="large"><i class="fa fa-rupee"></i><%= homestay.room_categories.first.category_price %></div><samll> per room/ per night</samll>
+                                </div>
+                                <div class="view-more destination-btn text-right">
+                                   <a href="<%= new_stay_booking_path(homestay)%>" class="btn btn-success">RESERVE ROOM</a>
+                                </div>                       
+                              <div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <%end%>   
+            </div>
+          </div>
+        </div>
+      </main>
+  </div>
+  <div class="col-md-1"></div>
+</div>
+<% else %>
+
+<%= render 'blank' %>
+<% end %>
+  
+<style type="text/css">
+  .review-rate.texdat-right.text-right{
+    font-size: 20px;
+    color: #2c5506;
+    font-weight: 700;
+  }
+samll {
+    font-size: 15px;
+}
+  span.total-review-txt {
+    font-size: 17px;
+}
+a.tc_dark {
+  color: #2c5406 !important;
+  text-transform: uppercase;
+}
+h4.category {
+  font-size: 16px !important;
+  text-transform: uppercase;
+  margin-left: 5px;
+  color: #2c5506;
+}
+a.btn.btn-success {
+    background-color: #2c5506;
+}
+a.btn.btn-success:hover {
+    background-color: #fff;
+    color: #2c5506;
+}
+span.tc_gray {
+  font-size: 15px !important;
+  margin-left: 5px !important;
+  text-align: left !important;
+  color: #2c5506 !important;
+}
+span.small.aman {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 5px;
+  text-transform: uppercase;
+  color: #2c5506 !important;
+}
+
+.gallery-content img {
+  margin: 20px;
+  width: 90%;
+  float: left;
+  height: 190px;
+  min-height: 190px;
+}
+.checked {
+  color: orange;
+}
+.abc{
+  color: orange;
+}
+.gallery-slide {
+  width: 100%;
+  float: left;
+  box-shadow: 0.5px 0.5px 5px 0px #4d504e;
+  margin: 5px 0;
+  border-radius: 4px;
+}
+.gallery-slide p
+{
+  padding: 10px;
+}
+.gallery-content img {
+  border-radius: 8px;
+}
+.hotel-services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.hotel-services ul li {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.hotel-services ul li i {
+    padding: 5px 10px;
+    font-size: 25px !important;
+    background-color: #2c5406;
+    border-radius: 5px; 
+    color: #fff;
+}
+.hotel-services ul li i:hover {
+    padding: 5px 10px;
+    font-size: 25px !important;
+    background-color: #b6d896;
+    border-radius: 5px; 
+    color: #2c5406;
+}
+.popover {
+  max-width: none;
+}
+.gallery-slide .destination-btn a {
+    padding: 6px 6px;
+}
+
+.gallery-slide .destination-btn {
+    margin: 15px 0;
+    text-align: right;
+}
+.review-rate a {
+    border-radius: 4px;
+    padding: 5px;
+}
+.right_blog {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    border-left: 1px solid #dbdbdb;
+}
+.left_blog
+{
+  float: left;
+    width: 100%;
+    padding: 20px;
+}
+span.fa.fa-star.checked {
+    font-size: 20px;
+}
+.reviews-count {
+    width: 100%;
+    float: left;
+    padding: 6px 0px 0 0;
+}
+.large {
+    font-size: 30px;
+    font-weight: 700;
+}
+</style>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/hot-sneaks/jquery-ui.css" />
+<!-- <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script> -->
+<script type="text/javascript">
+    function toggleChevron(e) {
+    $(e.target)
+        .prev('.panel-heading')
+        .find("i.indicator")
+        .toggleClass('fa-caret-down fa-caret-right');
+  }
+</script>
+
+<script type="text/javascript">
+  function star_rating(amount) {
+    var amounts = []
+       if ($('#my-star-rating').val() != "") {
+        amounts.push($('#my-star-rating').val())
+       }
+      if ($('#my-star-rating').val().includes(amount)) {
+        
+        amounts = amounts[0].split(",")
+         var index = amounts.indexOf(amount);
+        if (index > -1) {
+          amounts.splice(index, 1);
+        }
+      }else{
+        amounts.push(amount)
+      }
+      
+       $('#my-star-rating').val(amounts);
+
+       $('#search-form').submit();
+}
+
+    var param_star_rating = '<%= star_rating_values(params) %>'.split(",");
+       if (param_star_rating.includes('1')) {
+        $('#1rating').prop('checked', true);
+       }
+       if (param_star_rating.includes('2')) {
+        $('#2rating').prop('checked', true);
+       }
+       if (param_star_rating.includes('3')) {
+        $('#3rating').prop('checked', true);
+       }
+       if (param_star_rating.includes('4')) {
+        $('#4rating').prop('checked', true);
+       }
+       if (param_star_rating.includes('5')) {
+        $('#5rating').prop('checked', true);
+       }
+</script>
+
+<!-- <script type="text/javascript">
+  var  autocomplete;
+  function initAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),
+        {types: ['geocode']});
+
+  }
+  function geolocate() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var geolocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        var circle = new google.maps.Circle({
+          center: geolocation,
+          radius: position.coords.accuracy
+        });
+        autocomplete.setBounds(circle.getBounds());
+      });
+    }
+  }
+</script> -->
+
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNcD7L1bPn2xaFFtU6BUhXAUU_1FdNZQI&signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
+</style> -->
+<script type="text/javascript">
+  $(function () {
+        $("#stay_type").change(function () {
+            var selectedText = $(this).find("option:selected").val();
+            var selectedValue = $(this).val();
+            // console.log(selectedValue)
+        $( "#type_stay" ).val(selectedValue);
+        $( "#stay_type" ).val(selectedValue);
+        $('#search-form').submit();
+        });
+    });
+</script>
+<script>
+      $(document).ready(function() {
+      $( "#mySlider" ).slider({
+        range: true,
+        min: 1,
+        max: 5000,
+        values: [ <%= price_values(params).present? ? price_values(params).split('-')[0] : 0 %>, <%= price_values(params).present? ? price_values(params).split('-')[1] : 10000 %>],
+        slide: function( event, ui ) {
+       $( "#price" ).val( "" + ui.values[ 0 ] + " - " + ui.values[ 1 ] );
+       },
+
+         stop: function( event, ui ) {
+       $( "#price_range" ).val( "" + ui.values[ 0 ] + "-" + ui.values[ 1 ] );
+       $('#search-form').submit();
+       }
+    });
+    $( "#price" ).val( "" + $( "#mySlider" ).slider( "values", 0 ) +
+             " - " + $( "#mySlider" ).slider( "values", 1 ) );
+        
+      });
+  </script>

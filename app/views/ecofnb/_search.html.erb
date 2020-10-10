@@ -1,0 +1,158 @@
+<!-- <div id="booking" class="section"> -->
+    <!-- <div class="section-center"> -->
+      <!-- <div class="container"> -->
+        <!-- <div class="row aman"> -->
+          <div class="col-md-4 searchng-form">
+            <div class="booking-form">
+              <%= form_for(:search_parameters, url: ecofnb_all_stay_homes_path, html: {id: "search-form"}, method: :get) do |f| %>
+                <%= f.hidden_field :star_rating, value: star_rating_values(params), id: "my-star-rating" %>
+                  <%= f.hidden_field :price, value: price_values(params), id: "price_range" %>
+                  <%= f.hidden_field :stay_type, value: stay_type_values(params), id: "type_stay" %>
+                <div class="form-group">
+                  <!-- <span class="form-label">Your Destination</span> -->
+                  <%= f.text_field :search, required: true, value: search_values(params), class: "form-control",id: "param", placeholder: "Enter a Destination or Stay Name"%>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <!-- <span class="form-label">Check In</span> -->
+                      <input name="booking[start_date]" type="text" id="checkin" value= "" class="form-control search-slt datepicker" placeholder="Check-in" required/>
+                      <!-- <input class="form-control" type="date" required placeholder="Check"> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <!-- <span class="form-label">Check out</span> -->
+                      <input name="booking[last_date]" type="text" id="checkout" value="" class="form-control from-date-datepicker" placeholder="Check-out" required/>
+                      <!-- <input class="form-control" type="date" required> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <span class="form-label">Rooms</span>
+                      <select class="form-control" placeholder="rooms">
+                        <!-- <option ></option> -->
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                      </select>
+                      <span class="select-arrow"></span>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <span class="form-label">Guests</span>
+                      <input type="text" class="form-control" placeholder="No. of Guest" /> 
+                      <!-- <span class="select-arrow"></span> -->
+                    </div>
+                  </div>
+                  <!-- <div class="col-sm-4">
+                    <div class="form-group">
+                      <span class="form-label">Children</span>
+                      <select class="form-control">
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                      </select>
+                      <span class="select-arrow"></span>
+                    </div>
+                  </div> -->
+                </div>
+                <div class="form-btn">
+                  <button class="check-aman">Check availability</button>
+                </div>
+              <%end%>
+            </div>
+          </div>
+        <!-- </div> -->
+      <!-- </div> --> 
+    <!-- </div> -->
+  <!-- </div> -->
+
+  <style type="text/css">
+
+</style>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript">
+$(function () {
+  var minDate = new Date();
+    $("#search_parameters_start_date").datepicker({
+        numberOfMonths: 1,
+        dateFormat: 'yy-mm-dd',
+        minDate: minDate,
+        onSelect: function (selected) {
+            var dt = new Date(selected);
+            dt.setDate(dt.getDate() + 1);
+            $("#search_parameters_last_date").datepicker("option", "minDate", dt);
+        }
+    });
+    $("#search_parameters_last_date").datepicker({
+        numberOfMonths: 1,
+        dateFormat: 'yy-mm-dd',
+        minDate: minDate,
+        onSelect: function (selected) {
+            var dt = new Date(selected);
+            dt.setDate(dt.getDate() - 1);
+            $("#search_parameters_start_date").datepicker("option", "maxDate", dt);
+        }
+    });
+});
+</script>
+<script type="text/javascript">
+  var  autocomplete;
+  function initAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),
+        {types: ['geocode']});
+
+  }
+  function geolocate() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var geolocation = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        var circle = new google.maps.Circle({
+          center: geolocation,
+          radius: position.coords.accuracy
+        });
+        autocomplete.setBounds(circle.getBounds());
+      });
+    }
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNcD7L1bPn2xaFFtU6BUhXAUU_1FdNZQI&signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
+<script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+  <script>
+  $( document ).ready(function() {
+     var today = new Date();
+    $("#checkin").datepicker({
+      dateFormat: 'yy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
+      todayBtn: "linked",
+      minDate: today
+    });
+
+    $("#checkout").datepicker({
+      dateFormat: 'yy-mm-dd',
+      autoclose: true,
+      todayHighlight: true,
+      todayBtn: "linked",
+      minDate: today
+    });
+  });
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ECOFNB</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="<%=asset_path('favicon.ico')%>"/>
+    <meta name="description" content="Book the best eco-friendly stays from ECOFNB. choose from budget-friendly to exquisite stays... Fresh farm food, healthy atmosphere with unique experience... Homestays in Uttarakhand">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+         <%#javascript_include_tag "application" %>
+
+  </head>
+  <body>
+    <%= render 'layouts/headersafe' %>
+    <%= yield %>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>

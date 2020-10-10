@@ -1,0 +1,384 @@
+                                Prefix Verb       URI Pattern                                                                              Controller#Action
+                      errors_not_found GET        /errors/not_found(.:format)                                                              errors#not_found
+          errors_internal_server_error GET        /errors/internal_server_error(.:format)                                                  errors#internal_server_error
+                              uploader POST       /uploader(.:format)                                                                      blogs#uploader
+                     ckeditor_pictures POST       /ckeditor/pictures(.:format)                                                             blogs#ckeditor_picture {:format=>"json"}
+                         booking_dates GET        /booking_dates(.:format)                                                                 booking_dates#index
+                                       POST       /booking_dates(.:format)                                                                 booking_dates#create
+                      new_booking_date GET        /booking_dates/new(.:format)                                                             booking_dates#new
+                     edit_booking_date GET        /booking_dates/:id/edit(.:format)                                                        booking_dates#edit
+                          booking_date GET        /booking_dates/:id(.:format)                                                             booking_dates#show
+                                       PATCH      /booking_dates/:id(.:format)                                                             booking_dates#update
+                                       PUT        /booking_dates/:id(.:format)                                                             booking_dates#update
+                                       DELETE     /booking_dates/:id(.:format)                                                             booking_dates#destroy
+                              bookings GET        /bookings(.:format)                                                                      bookings#index
+                                       POST       /bookings(.:format)                                                                      bookings#create
+                           new_booking GET        /bookings/new(.:format)                                                                  bookings#new
+                          edit_booking GET        /bookings/:id/edit(.:format)                                                             bookings#edit
+                               booking GET        /bookings/:id(.:format)                                                                  bookings#show
+                                       PATCH      /bookings/:id(.:format)                                                                  bookings#update
+                                       PUT        /bookings/:id(.:format)                                                                  bookings#update
+                                       DELETE     /bookings/:id(.:format)                                                                  bookings#destroy
+                new_admin_user_session GET        /admin/login(.:format)                                                                   active_admin/devise/sessions#new
+                    admin_user_session POST       /admin/login(.:format)                                                                   active_admin/devise/sessions#create
+            destroy_admin_user_session GET|DELETE /admin/logout(.:format)                                                                  active_admin/devise/sessions#destroy
+               new_admin_user_password GET        /admin/password/new(.:format)                                                            active_admin/devise/passwords#new
+              edit_admin_user_password GET        /admin/password/edit(.:format)                                                           active_admin/devise/passwords#edit
+                   admin_user_password PATCH      /admin/password(.:format)                                                                active_admin/devise/passwords#update
+                                       PUT        /admin/password(.:format)                                                                active_admin/devise/passwords#update
+                                       POST       /admin/password(.:format)                                                                active_admin/devise/passwords#create
+                            admin_root GET        /admin(.:format)                                                                         admin/dashboard#index
+           batch_action_admin_about_us POST       /admin/about_us/batch_action(.:format)                                                   admin/about_us#batch_action
+                        admin_about_us GET        /admin/about_us(.:format)                                                                admin/about_us#index
+                                       POST       /admin/about_us(.:format)                                                                admin/about_us#create
+                     new_admin_about_u GET        /admin/about_us/new(.:format)                                                            admin/about_us#new
+                    edit_admin_about_u GET        /admin/about_us/:id/edit(.:format)                                                       admin/about_us#edit
+                         admin_about_u GET        /admin/about_us/:id(.:format)                                                            admin/about_us#show
+                                       PATCH      /admin/about_us/:id(.:format)                                                            admin/about_us#update
+                                       PUT        /admin/about_us/:id(.:format)                                                            admin/about_us#update
+                                       DELETE     /admin/about_us/:id(.:format)                                                            admin/about_us#destroy
+        batch_action_admin_admin_users POST       /admin/admin_users/batch_action(.:format)                                                admin/admin_users#batch_action
+                     admin_admin_users GET        /admin/admin_users(.:format)                                                             admin/admin_users#index
+                                       POST       /admin/admin_users(.:format)                                                             admin/admin_users#create
+                  new_admin_admin_user GET        /admin/admin_users/new(.:format)                                                         admin/admin_users#new
+                 edit_admin_admin_user GET        /admin/admin_users/:id/edit(.:format)                                                    admin/admin_users#edit
+                      admin_admin_user GET        /admin/admin_users/:id(.:format)                                                         admin/admin_users#show
+                                       PATCH      /admin/admin_users/:id(.:format)                                                         admin/admin_users#update
+                                       PUT        /admin/admin_users/:id(.:format)                                                         admin/admin_users#update
+                                       DELETE     /admin/admin_users/:id(.:format)                                                         admin/admin_users#destroy
+         batch_action_admin_app_colors POST       /admin/app_colors/batch_action(.:format)                                                 admin/app_colors#batch_action
+                      admin_app_colors GET        /admin/app_colors(.:format)                                                              admin/app_colors#index
+                                       POST       /admin/app_colors(.:format)                                                              admin/app_colors#create
+                   new_admin_app_color GET        /admin/app_colors/new(.:format)                                                          admin/app_colors#new
+                  edit_admin_app_color GET        /admin/app_colors/:id/edit(.:format)                                                     admin/app_colors#edit
+                       admin_app_color GET        /admin/app_colors/:id(.:format)                                                          admin/app_colors#show
+                                       PATCH      /admin/app_colors/:id(.:format)                                                          admin/app_colors#update
+                                       PUT        /admin/app_colors/:id(.:format)                                                          admin/app_colors#update
+                                       DELETE     /admin/app_colors/:id(.:format)                                                          admin/app_colors#destroy
+              batch_action_admin_blogs POST       /admin/blogs/batch_action(.:format)                                                      admin/blogs#batch_action
+                           admin_blogs GET        /admin/blogs(.:format)                                                                   admin/blogs#index
+                                       POST       /admin/blogs(.:format)                                                                   admin/blogs#create
+                        new_admin_blog GET        /admin/blogs/new(.:format)                                                               admin/blogs#new
+                       edit_admin_blog GET        /admin/blogs/:id/edit(.:format)                                                          admin/blogs#edit
+                            admin_blog GET        /admin/blogs/:id(.:format)                                                               admin/blogs#show
+                                       PATCH      /admin/blogs/:id(.:format)                                                               admin/blogs#update
+                                       PUT        /admin/blogs/:id(.:format)                                                               admin/blogs#update
+                                       DELETE     /admin/blogs/:id(.:format)                                                               admin/blogs#destroy
+      batch_action_admin_booking_dates POST       /admin/booking_dates/batch_action(.:format)                                              admin/booking_dates#batch_action
+                   admin_booking_dates GET        /admin/booking_dates(.:format)                                                           admin/booking_dates#index
+                                       POST       /admin/booking_dates(.:format)                                                           admin/booking_dates#create
+                new_admin_booking_date GET        /admin/booking_dates/new(.:format)                                                       admin/booking_dates#new
+               edit_admin_booking_date GET        /admin/booking_dates/:id/edit(.:format)                                                  admin/booking_dates#edit
+                    admin_booking_date GET        /admin/booking_dates/:id(.:format)                                                       admin/booking_dates#show
+                                       PATCH      /admin/booking_dates/:id(.:format)                                                       admin/booking_dates#update
+                                       PUT        /admin/booking_dates/:id(.:format)                                                       admin/booking_dates#update
+                                       DELETE     /admin/booking_dates/:id(.:format)                                                       admin/booking_dates#destroy
+      batch_action_admin_booking_rooms POST       /admin/booking_rooms/batch_action(.:format)                                              admin/booking_rooms#batch_action
+                   admin_booking_rooms GET        /admin/booking_rooms(.:format)                                                           admin/booking_rooms#index
+                                       POST       /admin/booking_rooms(.:format)                                                           admin/booking_rooms#create
+                new_admin_booking_room GET        /admin/booking_rooms/new(.:format)                                                       admin/booking_rooms#new
+               edit_admin_booking_room GET        /admin/booking_rooms/:id/edit(.:format)                                                  admin/booking_rooms#edit
+                    admin_booking_room GET        /admin/booking_rooms/:id(.:format)                                                       admin/booking_rooms#show
+                                       PATCH      /admin/booking_rooms/:id(.:format)                                                       admin/booking_rooms#update
+                                       PUT        /admin/booking_rooms/:id(.:format)                                                       admin/booking_rooms#update
+                                       DELETE     /admin/booking_rooms/:id(.:format)                                                       admin/booking_rooms#destroy
+           batch_action_admin_bookings POST       /admin/bookings/batch_action(.:format)                                                   admin/bookings#batch_action
+                        admin_bookings GET        /admin/bookings(.:format)                                                                admin/bookings#index
+                         admin_booking GET        /admin/bookings/:id(.:format)                                                            admin/bookings#show
+           batch_action_admin_contacts POST       /admin/contacts/batch_action(.:format)                                                   admin/contacts#batch_action
+                        admin_contacts GET        /admin/contacts(.:format)                                                                admin/contacts#index
+                                       POST       /admin/contacts(.:format)                                                                admin/contacts#create
+                     new_admin_contact GET        /admin/contacts/new(.:format)                                                            admin/contacts#new
+                    edit_admin_contact GET        /admin/contacts/:id/edit(.:format)                                                       admin/contacts#edit
+                         admin_contact GET        /admin/contacts/:id(.:format)                                                            admin/contacts#show
+                                       PATCH      /admin/contacts/:id(.:format)                                                            admin/contacts#update
+                                       PUT        /admin/contacts/:id(.:format)                                                            admin/contacts#update
+                                       DELETE     /admin/contacts/:id(.:format)                                                            admin/contacts#destroy
+                       admin_dashboard GET        /admin/dashboard(.:format)                                                               admin/dashboard#index
+    batch_action_admin_email_templates POST       /admin/email_templates/batch_action(.:format)                                            admin/email_templates#batch_action
+                 admin_email_templates GET        /admin/email_templates(.:format)                                                         admin/email_templates#index
+                                       POST       /admin/email_templates(.:format)                                                         admin/email_templates#create
+              new_admin_email_template GET        /admin/email_templates/new(.:format)                                                     admin/email_templates#new
+             edit_admin_email_template GET        /admin/email_templates/:id/edit(.:format)                                                admin/email_templates#edit
+                  admin_email_template GET        /admin/email_templates/:id(.:format)                                                     admin/email_templates#show
+                                       PATCH      /admin/email_templates/:id(.:format)                                                     admin/email_templates#update
+                                       PUT        /admin/email_templates/:id(.:format)                                                     admin/email_templates#update
+                                       DELETE     /admin/email_templates/:id(.:format)                                                     admin/email_templates#destroy
+         batch_action_admin_facilities POST       /admin/facilities/batch_action(.:format)                                                 admin/facilities#batch_action
+                      admin_facilities GET        /admin/facilities(.:format)                                                              admin/facilities#index
+                                       POST       /admin/facilities(.:format)                                                              admin/facilities#create
+                    new_admin_facility GET        /admin/facilities/new(.:format)                                                          admin/facilities#new
+                   edit_admin_facility GET        /admin/facilities/:id/edit(.:format)                                                     admin/facilities#edit
+                        admin_facility GET        /admin/facilities/:id(.:format)                                                          admin/facilities#show
+                                       PATCH      /admin/facilities/:id(.:format)                                                          admin/facilities#update
+                                       PUT        /admin/facilities/:id(.:format)                                                          admin/facilities#update
+                                       DELETE     /admin/facilities/:id(.:format)                                                          admin/facilities#destroy
+     batch_action_admin_facility_icons POST       /admin/facility_icons/batch_action(.:format)                                             admin/facility_icons#batch_action
+                  admin_facility_icons GET        /admin/facility_icons(.:format)                                                          admin/facility_icons#index
+                                       POST       /admin/facility_icons(.:format)                                                          admin/facility_icons#create
+               new_admin_facility_icon GET        /admin/facility_icons/new(.:format)                                                      admin/facility_icons#new
+              edit_admin_facility_icon GET        /admin/facility_icons/:id/edit(.:format)                                                 admin/facility_icons#edit
+                   admin_facility_icon GET        /admin/facility_icons/:id(.:format)                                                      admin/facility_icons#show
+                                       PATCH      /admin/facility_icons/:id(.:format)                                                      admin/facility_icons#update
+                                       PUT        /admin/facility_icons/:id(.:format)                                                      admin/facility_icons#update
+                                       DELETE     /admin/facility_icons/:id(.:format)                                                      admin/facility_icons#destroy
+     batch_action_admin_facility_types POST       /admin/facility_types/batch_action(.:format)                                             admin/facility_types#batch_action
+                  admin_facility_types GET        /admin/facility_types(.:format)                                                          admin/facility_types#index
+                                       POST       /admin/facility_types(.:format)                                                          admin/facility_types#create
+               new_admin_facility_type GET        /admin/facility_types/new(.:format)                                                      admin/facility_types#new
+              edit_admin_facility_type GET        /admin/facility_types/:id/edit(.:format)                                                 admin/facility_types#edit
+                   admin_facility_type GET        /admin/facility_types/:id(.:format)                                                      admin/facility_types#show
+                                       PATCH      /admin/facility_types/:id(.:format)                                                      admin/facility_types#update
+                                       PUT        /admin/facility_types/:id(.:format)                                                      admin/facility_types#update
+                                       DELETE     /admin/facility_types/:id(.:format)                                                      admin/facility_types#destroy
+          batch_action_admin_faq_types POST       /admin/faq_types/batch_action(.:format)                                                  admin/faq_types#batch_action
+                       admin_faq_types GET        /admin/faq_types(.:format)                                                               admin/faq_types#index
+                                       POST       /admin/faq_types(.:format)                                                               admin/faq_types#create
+                    new_admin_faq_type GET        /admin/faq_types/new(.:format)                                                           admin/faq_types#new
+                   edit_admin_faq_type GET        /admin/faq_types/:id/edit(.:format)                                                      admin/faq_types#edit
+                        admin_faq_type GET        /admin/faq_types/:id(.:format)                                                           admin/faq_types#show
+                                       PATCH      /admin/faq_types/:id(.:format)                                                           admin/faq_types#update
+                                       PUT        /admin/faq_types/:id(.:format)                                                           admin/faq_types#update
+                                       DELETE     /admin/faq_types/:id(.:format)                                                           admin/faq_types#destroy
+               batch_action_admin_faqs POST       /admin/faqs/batch_action(.:format)                                                       admin/faqs#batch_action
+                            admin_faqs GET        /admin/faqs(.:format)                                                                    admin/faqs#index
+                                       POST       /admin/faqs(.:format)                                                                    admin/faqs#create
+                         new_admin_faq GET        /admin/faqs/new(.:format)                                                                admin/faqs#new
+                        edit_admin_faq GET        /admin/faqs/:id/edit(.:format)                                                           admin/faqs#edit
+                             admin_faq GET        /admin/faqs/:id(.:format)                                                                admin/faqs#show
+                                       PATCH      /admin/faqs/:id(.:format)                                                                admin/faqs#update
+                                       PUT        /admin/faqs/:id(.:format)                                                                admin/faqs#update
+                                       DELETE     /admin/faqs/:id(.:format)                                                                admin/faqs#destroy
+   batch_action_admin_founder_messages POST       /admin/founder_messages/batch_action(.:format)                                           admin/founder_messages#batch_action
+                admin_founder_messages GET        /admin/founder_messages(.:format)                                                        admin/founder_messages#index
+                                       POST       /admin/founder_messages(.:format)                                                        admin/founder_messages#create
+             new_admin_founder_message GET        /admin/founder_messages/new(.:format)                                                    admin/founder_messages#new
+            edit_admin_founder_message GET        /admin/founder_messages/:id/edit(.:format)                                               admin/founder_messages#edit
+                 admin_founder_message GET        /admin/founder_messages/:id(.:format)                                                    admin/founder_messages#show
+                                       PATCH      /admin/founder_messages/:id(.:format)                                                    admin/founder_messages#update
+                                       PUT        /admin/founder_messages/:id(.:format)                                                    admin/founder_messages#update
+                                       DELETE     /admin/founder_messages/:id(.:format)                                                    admin/founder_messages#destroy
+          batch_action_admin_galleries POST       /admin/galleries/batch_action(.:format)                                                  admin/galleries#batch_action
+                       admin_galleries GET        /admin/galleries(.:format)                                                               admin/galleries#index
+                                       POST       /admin/galleries(.:format)                                                               admin/galleries#create
+                     new_admin_gallery GET        /admin/galleries/new(.:format)                                                           admin/galleries#new
+                    edit_admin_gallery GET        /admin/galleries/:id/edit(.:format)                                                      admin/galleries#edit
+                         admin_gallery GET        /admin/galleries/:id(.:format)                                                           admin/galleries#show
+                                       PATCH      /admin/galleries/:id(.:format)                                                           admin/galleries#update
+                                       PUT        /admin/galleries/:id(.:format)                                                           admin/galleries#update
+                                       DELETE     /admin/galleries/:id(.:format)                                                           admin/galleries#destroy
+          batch_action_admin_merchants POST       /admin/merchants/batch_action(.:format)                                                  admin/merchants#batch_action
+                       admin_merchants GET        /admin/merchants(.:format)                                                               admin/merchants#index
+                                       POST       /admin/merchants(.:format)                                                               admin/merchants#create
+                    new_admin_merchant GET        /admin/merchants/new(.:format)                                                           admin/merchants#new
+                   edit_admin_merchant GET        /admin/merchants/:id/edit(.:format)                                                      admin/merchants#edit
+                        admin_merchant GET        /admin/merchants/:id(.:format)                                                           admin/merchants#show
+                                       PATCH      /admin/merchants/:id(.:format)                                                           admin/merchants#update
+                                       PUT        /admin/merchants/:id(.:format)                                                           admin/merchants#update
+                                       DELETE     /admin/merchants/:id(.:format)                                                           admin/merchants#destroy
+           batch_action_admin_payments POST       /admin/payments/batch_action(.:format)                                                   admin/payments#batch_action
+                        admin_payments GET        /admin/payments(.:format)                                                                admin/payments#index
+                                       POST       /admin/payments(.:format)                                                                admin/payments#create
+                     new_admin_payment GET        /admin/payments/new(.:format)                                                            admin/payments#new
+                    edit_admin_payment GET        /admin/payments/:id/edit(.:format)                                                       admin/payments#edit
+                         admin_payment GET        /admin/payments/:id(.:format)                                                            admin/payments#show
+                                       PATCH      /admin/payments/:id(.:format)                                                            admin/payments#update
+                                       PUT        /admin/payments/:id(.:format)                                                            admin/payments#update
+                                       DELETE     /admin/payments/:id(.:format)                                                            admin/payments#destroy
+ batch_action_admin_photogallery_types POST       /admin/photogallery_types/batch_action(.:format)                                         admin/photogallery_types#batch_action
+              admin_photogallery_types GET        /admin/photogallery_types(.:format)                                                      admin/photogallery_types#index
+                                       POST       /admin/photogallery_types(.:format)                                                      admin/photogallery_types#create
+           new_admin_photogallery_type GET        /admin/photogallery_types/new(.:format)                                                  admin/photogallery_types#new
+          edit_admin_photogallery_type GET        /admin/photogallery_types/:id/edit(.:format)                                             admin/photogallery_types#edit
+               admin_photogallery_type GET        /admin/photogallery_types/:id(.:format)                                                  admin/photogallery_types#show
+                                       PATCH      /admin/photogallery_types/:id(.:format)                                                  admin/photogallery_types#update
+                                       PUT        /admin/photogallery_types/:id(.:format)                                                  admin/photogallery_types#update
+                                       DELETE     /admin/photogallery_types/:id(.:format)                                                  admin/photogallery_types#destroy
+    batch_action_admin_room_categories POST       /admin/room_categories/batch_action(.:format)                                            admin/room_categories#batch_action
+                 admin_room_categories GET        /admin/room_categories(.:format)                                                         admin/room_categories#index
+                                       POST       /admin/room_categories(.:format)                                                         admin/room_categories#create
+               new_admin_room_category GET        /admin/room_categories/new(.:format)                                                     admin/room_categories#new
+              edit_admin_room_category GET        /admin/room_categories/:id/edit(.:format)                                                admin/room_categories#edit
+                   admin_room_category GET        /admin/room_categories/:id(.:format)                                                     admin/room_categories#show
+                                       PATCH      /admin/room_categories/:id(.:format)                                                     admin/room_categories#update
+                                       PUT        /admin/room_categories/:id(.:format)                                                     admin/room_categories#update
+                                       DELETE     /admin/room_categories/:id(.:format)                                                     admin/room_categories#destroy
+              batch_action_admin_rooms POST       /admin/rooms/batch_action(.:format)                                                      admin/rooms#batch_action
+                           admin_rooms GET        /admin/rooms(.:format)                                                                   admin/rooms#index
+                                       POST       /admin/rooms(.:format)                                                                   admin/rooms#create
+                        new_admin_room GET        /admin/rooms/new(.:format)                                                               admin/rooms#new
+                       edit_admin_room GET        /admin/rooms/:id/edit(.:format)                                                          admin/rooms#edit
+                            admin_room GET        /admin/rooms/:id(.:format)                                                               admin/rooms#show
+                                       PATCH      /admin/rooms/:id(.:format)                                                               admin/rooms#update
+                                       PUT        /admin/rooms/:id(.:format)                                                               admin/rooms#update
+                                       DELETE     /admin/rooms/:id(.:format)                                                               admin/rooms#destroy
+         batch_action_admin_stay_homes POST       /admin/stay_homes/batch_action(.:format)                                                 admin/stay_homes#batch_action
+                      admin_stay_homes GET        /admin/stay_homes(.:format)                                                              admin/stay_homes#index
+                                       POST       /admin/stay_homes(.:format)                                                              admin/stay_homes#create
+                   new_admin_stay_home GET        /admin/stay_homes/new(.:format)                                                          admin/stay_homes#new
+                  edit_admin_stay_home GET        /admin/stay_homes/:id/edit(.:format)                                                     admin/stay_homes#edit
+                       admin_stay_home GET        /admin/stay_homes/:id(.:format)                                                          admin/stay_homes#show
+                                       PATCH      /admin/stay_homes/:id(.:format)                                                          admin/stay_homes#update
+                                       PUT        /admin/stay_homes/:id(.:format)                                                          admin/stay_homes#update
+                                       DELETE     /admin/stay_homes/:id(.:format)                                                          admin/stay_homes#destroy
+batch_action_admin_stayhome_facilities POST       /admin/stayhome_facilities/batch_action(.:format)                                        admin/stayhome_facilities#batch_action
+             admin_stayhome_facilities GET        /admin/stayhome_facilities(.:format)                                                     admin/stayhome_facilities#index
+                                       POST       /admin/stayhome_facilities(.:format)                                                     admin/stayhome_facilities#create
+           new_admin_stayhome_facility GET        /admin/stayhome_facilities/new(.:format)                                                 admin/stayhome_facilities#new
+          edit_admin_stayhome_facility GET        /admin/stayhome_facilities/:id/edit(.:format)                                            admin/stayhome_facilities#edit
+               admin_stayhome_facility GET        /admin/stayhome_facilities/:id(.:format)                                                 admin/stayhome_facilities#show
+                                       PATCH      /admin/stayhome_facilities/:id(.:format)                                                 admin/stayhome_facilities#update
+                                       PUT        /admin/stayhome_facilities/:id(.:format)                                                 admin/stayhome_facilities#update
+                                       DELETE     /admin/stayhome_facilities/:id(.:format)                                                 admin/stayhome_facilities#destroy
+              batch_action_admin_stays POST       /admin/stays/batch_action(.:format)                                                      admin/stays#batch_action
+                           admin_stays GET        /admin/stays(.:format)                                                                   admin/stays#index
+                                       POST       /admin/stays(.:format)                                                                   admin/stays#create
+                        new_admin_stay GET        /admin/stays/new(.:format)                                                               admin/stays#new
+                       edit_admin_stay GET        /admin/stays/:id/edit(.:format)                                                          admin/stays#edit
+                            admin_stay GET        /admin/stays/:id(.:format)                                                               admin/stays#show
+                                       PATCH      /admin/stays/:id(.:format)                                                               admin/stays#update
+                                       PUT        /admin/stays/:id(.:format)                                                               admin/stays#update
+                                       DELETE     /admin/stays/:id(.:format)                                                               admin/stays#destroy
+              batch_action_admin_users POST       /admin/users/batch_action(.:format)                                                      admin/users#batch_action
+                           admin_users GET        /admin/users(.:format)                                                                   admin/users#index
+                                       POST       /admin/users(.:format)                                                                   admin/users#create
+                        new_admin_user GET        /admin/users/new(.:format)                                                               admin/users#new
+                       edit_admin_user GET        /admin/users/:id/edit(.:format)                                                          admin/users#edit
+                            admin_user GET        /admin/users/:id(.:format)                                                               admin/users#show
+                                       PATCH      /admin/users/:id(.:format)                                                               admin/users#update
+                                       PUT        /admin/users/:id(.:format)                                                               admin/users#update
+                                       DELETE     /admin/users/:id(.:format)                                                               admin/users#destroy
+             batch_action_admin_videos POST       /admin/videos/batch_action(.:format)                                                     admin/videos#batch_action
+                          admin_videos GET        /admin/videos(.:format)                                                                  admin/videos#index
+                                       POST       /admin/videos(.:format)                                                                  admin/videos#create
+                       new_admin_video GET        /admin/videos/new(.:format)                                                              admin/videos#new
+                      edit_admin_video GET        /admin/videos/:id/edit(.:format)                                                         admin/videos#edit
+                           admin_video GET        /admin/videos/:id(.:format)                                                              admin/videos#show
+                                       PATCH      /admin/videos/:id(.:format)                                                              admin/videos#update
+                                       PUT        /admin/videos/:id(.:format)                                                              admin/videos#update
+                                       DELETE     /admin/videos/:id(.:format)                                                              admin/videos#destroy
+                        admin_comments GET        /admin/comments(.:format)                                                                admin/comments#index
+                                       POST       /admin/comments(.:format)                                                                admin/comments#create
+                         admin_comment GET        /admin/comments/:id(.:format)                                                            admin/comments#show
+                                       DELETE     /admin/comments/:id(.:format)                                                            admin/comments#destroy
+                      new_user_session GET        /users/sign_in(.:format)                                                                 devise/sessions#new
+                          user_session POST       /users/sign_in(.:format)                                                                 devise/sessions#create
+                  destroy_user_session GET        /users/sign_out(.:format)                                                                devise/sessions#destroy
+                     new_user_password GET        /users/password/new(.:format)                                                            devise/passwords#new
+                    edit_user_password GET        /users/password/edit(.:format)                                                           devise/passwords#edit
+                         user_password PATCH      /users/password(.:format)                                                                devise/passwords#update
+                                       PUT        /users/password(.:format)                                                                devise/passwords#update
+                                       POST       /users/password(.:format)                                                                devise/passwords#create
+              cancel_user_registration GET        /users/cancel(.:format)                                                                  devise/registrations#cancel
+                 new_user_registration GET        /users/sign_up(.:format)                                                                 devise/registrations#new
+                edit_user_registration GET        /users/edit(.:format)                                                                    devise/registrations#edit
+                     user_registration PATCH      /users(.:format)                                                                         devise/registrations#update
+                                       PUT        /users(.:format)                                                                         devise/registrations#update
+                                       DELETE     /users(.:format)                                                                         devise/registrations#destroy
+                                       POST       /users(.:format)                                                                         devise/registrations#create
+                  new_merchant_session GET        /merchants/sign_in(.:format)                                                             merchants/sessions#new
+                      merchant_session POST       /merchants/sign_in(.:format)                                                             merchants/sessions#create
+              destroy_merchant_session GET        /merchants/sign_out(.:format)                                                            merchants/sessions#destroy
+                 new_merchant_password GET        /merchants/password/new(.:format)                                                        devise/passwords#new
+                edit_merchant_password GET        /merchants/password/edit(.:format)                                                       devise/passwords#edit
+                     merchant_password PATCH      /merchants/password(.:format)                                                            devise/passwords#update
+                                       PUT        /merchants/password(.:format)                                                            devise/passwords#update
+                                       POST       /merchants/password(.:format)                                                            devise/passwords#create
+          cancel_merchant_registration GET        /merchants/cancel(.:format)                                                              merchants/registrations#cancel
+             new_merchant_registration GET        /merchants/sign_up(.:format)                                                             merchants/registrations#new
+            edit_merchant_registration GET        /merchants/edit(.:format)                                                                merchants/registrations#edit
+                 merchant_registration PATCH      /merchants(.:format)                                                                     merchants/registrations#update
+                                       PUT        /merchants(.:format)                                                                     merchants/registrations#update
+                                       DELETE     /merchants(.:format)                                                                     merchants/registrations#destroy
+                                       POST       /merchants(.:format)                                                                     merchants/registrations#create
+                    merchants_sign_out GET        /merchants/sign_out(.:format)                                                            devise/sessions#destroy
+  merchants_pertner_sign_up_with_email GET        /merchants/pertner_sign_up_with_email(.:format)                                          merchants/registrations#pertner_sign_up_with_email
+             merchants_status_approved GET        /merchants_status_approved(.:format)                                                     application#merchants_status_approved
+                        users_sign_out GET        /users/sign_out(.:format)                                                                devise/sessions#destroy
+                                       GET|POST   /auth/:provider/callback(.:format)                                                       sessions#create
+                          auth_failure GET|POST   /auth/failure(.:format)                                                                  sessions#failure
+                         paytm_payment POST       /paytm_payment(.:format)                                                                 payment_systems#start_payment
+                       confirm_payment POST       /confirm_payment(.:format)                                                               payment_systems#verify_payment
+                          ecofnb_index GET        /ecofnb/index(.:format)                                                                  ecofnb#index
+                    ecofnb_ecofriendly GET        /ecofnb/ecofriendly(.:format)                                                            ecofnb#ecofriendly
+             ecofnb_filter_search_stay GET        /ecofnb/filter_search_stay(.:format)                                                     ecofnb#filter_search_stay
+                          ecofnb_about GET        /ecofnb/about(.:format)                                                                  ecofnb#about
+                 ecofnb_all_stay_homes GET        /ecofnb/all_stay_homes(.:format)                                                         ecofnb#all_stay_homes
+                ecofnb_founder_message GET        /ecofnb/founder_message(.:format)                                                        ecofnb#founder_message
+                           ecofnb_help GET        /ecofnb/help(.:format)                                                                   ecofnb#help
+                        ecofnb_support GET        /ecofnb/support(.:format)                                                                ecofnb#support
+                 profile_guest_profile GET        /profile/guest_profile(.:format)                                                         profile#guest_profile
+                      blogs_short_blog GET        /blogs/short_blog(.:format)                                                              blogs#short_blog
+                                  root GET        /                                                                                        ecofnb#index
+                              contacts POST       /contacts(.:format)                                                                      contacts#create
+                           new_contact GET        /contacts/new(.:format)                                                                  contacts#new
+                                 blogs GET        /blogs(.:format)                                                                         blogs#index
+                                  blog GET        /blogs/:id(.:format)                                                                     blogs#show
+                             galleries GET        /galleries(.:format)                                                                     galleries#index
+                       galleries_video GET        /galleries/video(.:format)                                                               galleries#video
+                    galleries_merchant GET        /galleries/merchant(.:format)                                                            galleries#merchant
+                     bookings_new_stay GET        /stay/:id/bookings/new(.:format)                                                         bookings#new
+                                  stay GET        /stay/:id(.:format)                                                                      stay#show
+                 search_rooms_bookings GET        /bookings/search_rooms(.:format)                                                         bookings#search_rooms
+              available_rooms_bookings GET        /bookings/available_rooms(.:format)                                                      bookings#available_rooms
+                                       POST       /bookings(.:format)                                                                      bookings#create
+                                       GET        /bookings/new(.:format)                                                                  bookings#new
+                                       GET        /stay/:id/bookings/new(.:format)                                                         bookings#new
+            search_rooms_stay_bookings GET        /stay/:stay_id/bookings/search_rooms(.:format)                                           bookings#search_rooms
+         available_rooms_stay_bookings GET        /stay/:stay_id/bookings/available_rooms(.:format)                                        bookings#available_rooms
+                         stay_bookings POST       /stay/:stay_id/bookings(.:format)                                                        bookings#create
+                      new_stay_booking GET        /stay/:stay_id/bookings/new(.:format)                                                    bookings#new
+                                  faqs GET        /faqs(.:format)                                                                          faqs#index
+                        merchant_index GET        /merchant(.:format)                                                                      merchant#index
+                                       POST       /merchant(.:format)                                                                      merchant#create
+                          new_merchant GET        /merchant/new(.:format)                                                                  merchant#new
+                         edit_merchant GET        /merchant/:id/edit(.:format)                                                             merchant#edit
+                              merchant GET        /merchant/:id(.:format)                                                                  merchant#show
+                                       PATCH      /merchant/:id(.:format)                                                                  merchant#update
+                                       PUT        /merchant/:id(.:format)                                                                  merchant#update
+                                       DELETE     /merchant/:id(.:format)                                                                  merchant#destroy
+                                orders GET        /orders(.:format)                                                                        merchant#booking_order
+                            my_account GET        /my_account(.:format)                                                                    merchant#profile
+                        rating_reviews GET        /stay_homes/:id/rating_reviews(.:format)                                                 rating_reviews#index
+                                       POST       /stay_homes/:id/rating_reviews(.:format)                                                 rating_reviews#create
+                     new_rating_review GET        /stay_homes/:id/rating_reviews/new(.:format)                                             rating_reviews#new
+                    edit_rating_review GET        /stay_homes/:id/rating_reviews/:id/edit(.:format)                                        rating_reviews#edit
+                         rating_review GET        /stay_homes/:id/rating_reviews/:id(.:format)                                             rating_reviews#show
+                                       PATCH      /stay_homes/:id/rating_reviews/:id(.:format)                                             rating_reviews#update
+                                       PUT        /stay_homes/:id/rating_reviews/:id(.:format)                                             rating_reviews#update
+                                       DELETE     /stay_homes/:id/rating_reviews/:id(.:format)                                             rating_reviews#destroy
+        stay_status_approved_stay_home GET        /stay_homes/:id/stay_status_approved(.:format)                                           stay_homes#stay_status_approved
+                            stay_homes GET        /stay_homes(.:format)                                                                    stay_homes#index
+                                       POST       /stay_homes(.:format)                                                                    stay_homes#create
+                         new_stay_home GET        /stay_homes/new(.:format)                                                                stay_homes#new
+                        edit_stay_home GET        /stay_homes/:id/edit(.:format)                                                           stay_homes#edit
+                             stay_home GET        /stay_homes/:id(.:format)                                                                stay_homes#show
+                                       PATCH      /stay_homes/:id(.:format)                                                                stay_homes#update
+                                       PUT        /stay_homes/:id(.:format)                                                                stay_homes#update
+                                       DELETE     /stay_homes/:id(.:format)                                                                stay_homes#destroy
+                                 rooms GET        /stay_homes/:stay_home_id/rooms(.:format)                                                rooms#index
+                                       POST       /stay_homes/:stay_home_id/rooms(.:format)                                                rooms#create
+                              new_room GET        /stay_homes/:stay_home_id/rooms/new(.:format)                                            rooms#new
+                             edit_room GET        /stay_homes/:stay_home_id/rooms/:id/edit(.:format)                                       rooms#edit
+                                  room GET        /stay_homes/:stay_home_id/rooms/:id(.:format)                                            rooms#show
+                                       PATCH      /stay_homes/:stay_home_id/rooms/:id(.:format)                                            rooms#update
+                                       PUT        /stay_homes/:stay_home_id/rooms/:id(.:format)                                            rooms#update
+                                       DELETE     /stay_homes/:stay_home_id/rooms/:id(.:format)                                            rooms#destroy
+                       room_categories GET        /room_categories(.:format)                                                               room_categories#index
+                                       POST       /room_categories(.:format)                                                               room_categories#create
+                     new_room_category GET        /room_categories/new(.:format)                                                           room_categories#new
+                    edit_room_category GET        /room_categories/:id/edit(.:format)                                                      room_categories#edit
+                         room_category GET        /room_categories/:id(.:format)                                                           room_categories#show
+                                       PATCH      /room_categories/:id(.:format)                                                           room_categories#update
+                                       PUT        /room_categories/:id(.:format)                                                           room_categories#update
+                                       DELETE     /room_categories/:id(.:format)                                                           room_categories#destroy
+                                       GET        /Stay/:stay_id(.:format)                                                                 ecofnb#stay_category
+                     signup_with_email GET        /signup_with_email(.:format)                                                             ecofnb#signup_with_email
+                                                  /404(.:format)                                                                           errors#not_found
+                                                  /500(.:format)                                                                           errors#internal_server_error
+                                                  /422(.:format)                                                                           errors#unacceptable
+                    rails_service_blob GET        /rails/active_storage/blobs/:signed_id/*filename(.:format)                               active_storage/blobs#show
+             rails_blob_representation GET        /rails/active_storage/representations/:signed_blob_id/:variation_key/*filename(.:format) active_storage/representations#show
+                    rails_disk_service GET        /rails/active_storage/disk/:encoded_key/*filename(.:format)                              active_storage/disk#show
+             update_rails_disk_service PUT        /rails/active_storage/disk/:encoded_token(.:format)                                      active_storage/disk#update
+                  rails_direct_uploads POST       /rails/active_storage/direct_uploads(.:format)                                           active_storage/direct_uploads#create

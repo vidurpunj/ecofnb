@@ -1,0 +1,26 @@
+<%= render 'merchant/partner'%>
+<div class="card">
+    <div class="container-fluid no-left-padding no-right-padding gallery-main gallery-masonry">
+        <div class="container">
+            <div class="section-header tcp_gray">
+                <h3 class="tc_dark tcspan_green"><!-- <span>Merchant</span> Page --></h3>
+                     <div id="navbar" class="collapse navbar-collapse">
+                          <% if current_merchant.present? %>
+                           <div> <%= link_to "View Home Stay", stay_homes_path, class: "btn bg_green tc_white tc_green_h bg_white_h" %></div></br>
+                           <div> <%= link_to "Add New Home Stay", new_stay_home_path, class: "btn bg_green tc_white tc_green_h bg_white_h" %></div>
+                            <% else %>
+                            <%= link_to "Login With Partner", new_merchant_session_path %>
+                            <% end %>
+                            <% if !current_merchant.present? %><br/>
+                            <%= link_to "Signup With Partner", new_merchant_registration_path %> 
+                            <%end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+   $('.datatable').DataTable({
+   });
+</script>

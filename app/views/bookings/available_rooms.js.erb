@@ -1,0 +1,22 @@
+// Validations for search filters of rooms
+<% @booking.valid? %>
+<% error_messages = @booking.errors.messages.slice(:start_date, :last_date) %>
+<% if !error_messages.blank? %>
+    errors = ""
+	$.each(<%= raw error_messages.to_json %>, function(k, v) {
+        $(v).each(function(){
+            errors+="<li><span class='red-validation'><span class='capitalize red-validation'>"+k.replace(/_/g,' ')+"</span> "+this+"</span></li>"
+        })
+    });  
+    $("#message").html(errors)
+
+<% elsif @hotel_rooms.count < @booking.num_of_room.to_i %>
+  $("#message").html("<span class='text-danger' style='font-weight: 900; margin-left: 86px;font-size: 2.2rem; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black; '><%=@hotel_rooms.count%> Rooms are available in this date range</span>")
+<% elsif %>
+  $("#message").replaceWith("<%= j( render 'total_price' )%>")
+  $(".available1_rooms").replaceWith("<%= j( render 'available_rooms' )%>")
+   $(".hide_button").hide();
+   $("#hide_form").hide();
+<% end %>
+
+  

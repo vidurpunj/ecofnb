@@ -1,0 +1,52 @@
+<footer class="abc">
+  <div class="container" id="footer">
+    <div class="section-heading scrollpoint sp-effect3">
+      <div class="row">      
+        <div class="col-md-4">
+          <aside class="widget widget_contact">
+            <h3 class="contact_heading">CONTACT US</h3>
+            <p class="contact_us"><i class="fa fa-map-marker"></i>&nbsp;&nbsp;Jagannath Complex, First Floor, &nbsp;&nbsp;Nainital Road Haldwani</p>
+            <p class="contact_us"><i class="fa fa-mobile"></i><a href="tel:+917078877002">&nbsp;&nbsp;(+91) 7078877002</a></p>
+            <p class="contact_us"><i class="fa fa-envelope"></i><a href="mailto:info@ecofnb.com">&nbsp;&nbsp;info@ecofnb.com</a></p>
+            <p class="contact_us"><i class="fa fa-internet-explorer"></i><a target="_blank" href="https://www.ecofnb.com">&nbsp;&nbsp;www.ecofnb.com</a></p>
+            </aside>
+            <ul class="social-network social-circle">
+              <li><a href="https://www.facebook.com/Ecofnb-1591258727642130" target="_blank" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="https://twitter.com/ecofnb" target="_blank" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="https://www.instagram.com/ecofnb/" target="_blank" class="icoInstagram" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="https://www.youtube.com/channel/UC8rgXc5jzlLGIZyDbg2vYBg" target="_blank" class="icoYoutube" title="Youtube"><i class="fa fa-youtube"></i></a></li>
+            </ul>
+        </div>
+        
+
+      <div class="col-md-4">
+        <h3>OUR BLOGS</h3>
+        <%@latest_post.each do |r_post|%>
+          <div class="row">
+            <div class="col-md-6">
+              <div style="margin-bottom: 10px">
+                  <a href="<%=blog_path(r_post)%>" title="<%= r_post.title %>"><i><img src="<%=r_post.image.url%>" class="wp-post-image" alt="<%= r_post.title %>" style="width: 120px; height: 60px; margin-bottom: 8px"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6"><a href="<%=blog_path(r_post)%>"><%= r_post.title %></a></div>
+          </div>
+        <%end%>
+      </div>
+
+      <div class="col-md-4">
+        <h3>OUR PARTNERS</h3>          
+        <% @latest_stay.each do |latest_stay| %>
+          <a href="<%= stay_path(latest_stay)%>" title="<%= latest_stay.stay_name%>"><i><img src="<%=latest_stay.stay_images.last.stay_image.url%>" class="img-thumbnail" alt="<%= latest_stay.stay_name%>" style="width: 150px;height: 100px;"></i></a>
+        <%end%>
+      </div>
+      </div>
+     </div>
+    </div>
+  <hr style="width: 100%;">
+  <div class="copyright text-center">  
+   &emsp;&emsp;&emsp;&emsp;&emsp;<%= link_to "Terms & Conditions", asset_path("term_condition.pdf") %>&nbsp;|&nbsp;|&nbsp;<a href="<%= faqs_path%>">Faqs</a>&nbsp;|&nbsp;|&nbsp;<%= link_to "Privacy Policy", asset_path("PRIVACY_POLICY.pdf") %>
+      <div class="powered-by pull-left">
+        <p class="ryientsoft"><span class="design-by"><b>Design Credits:  &nbsp;</b></span> <a href="http://www.ryientsoft.com/" target="_blank"><strong>RyientSoft Technologies</strong></a></p> 
+      </div>
+  </div>
+</footer>

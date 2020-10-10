@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="col-md-8 col-sm-6 content-area blog-single-curv">
+		<% @stay_home.rating_reviews.each do |st| %>
+		<%# byebug %>
+		      <div class="aaaaa">
+		      	         <div class="col-md-8 col-sm-6 content-area blog-single-curv">
+		                  <% if st.rating.present? %>
+			                    <% (1 .. (st.rating.to_i)/2).each do |t|%>
+		                    	  <span class="fa fa-star checked"></span>
+			                   <%end %>
+			               <%else%>
+		                 		<% if @stay_home.avg_rating.to_s.split('.')[1].to_i > 0 %>
+		                          <span class="fa fa-star black"></span>
+		                         <% end %>
+		                    <% end %>
+		                 </div>
+		                          
+		                   <div class="col-md-8 col-sm-6 content-area blog-single-curv">
+		                   	Guest name:-
+		                  <b> <%= st.user.try(:name) %></b>
+		                   </div>
+
+		                   <div class="col-md-8 col-sm-6 content-area blog-single-curv">
+		                   	Title:-
+		                   	<%= st.title %>
+		                   </div>
+
+		                   <div class="col-md-8 col-sm-6" style="display: inline-block;">
+		                   	Review:-
+		                     <%= st.review %>
+		                   </div>    
+
+		          </div>
+
+		<% end %>
+		
+</div>
+<style>
+.checked {
+  color: orange;
+}
+
+.abc{
+	color: orange;
+}
+.aaaaa{
+	overflow-wrap: break-word;
+	    border-bottom: 0;
+    line-height: 1.25;
+    min-height: 110px;
+    padding-bottom: 16px;
+
+    line-height: 1.5;
+        position: relative;
+        box-sizing: border-box;
+            display: block;
+                color: #37454d;
+}
+</style>

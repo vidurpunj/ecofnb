@@ -1,0 +1,51 @@
+<script>
+    var tandil = {lat: <%= latitude%>, lng: <%= longitude%>};
+    var advertisement_location;
+    var marker;
+    var latitude = <%= map_type[:latitude].to_json.html_safe %>;
+    var longitude = <%= map_type[:longitude].to_json.html_safe %>;
+
+    if(latitude)
+    {
+        advertisement_location = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
+    }
+    else
+    {
+        advertisement_location = tandil;
+    }
+    var map;
+    var geocoder;
+    
+    
+    function initMap() {
+        geocoder = new google.maps.Geocoder();
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 14,
+            center: tandil,
+            scrollwheel: false
+        });
+
+        marker = new google.maps.Marker({
+            position: advertisement_location,
+            draggable: <%=map_draggable%>,
+            map: map
+        });
+
+        google.maps.event.addListener(marker, 'dragend', function() {
+            geocoder.geocode({'latLng': marker.getPosition()}, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    if (results[0]) {
+                        $('#'+'<%=map_class%>'+'_latitude').val(marker.getPosition().lat());
+                        $('#'+'<%=map_class%>'+'_longitude').val(marker.getPosition().lng());
+                        $('#'+'<%=map_class%>'+'_address').val(results[0].formatted_address);
+                    }
+                }
+            });
+        });
+    }
+
+</script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNVIo-1Q1GZaehfN25nY5ht_yXbpAd5Kk&callback=initMap">
+</script>

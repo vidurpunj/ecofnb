@@ -1,0 +1,33 @@
+<div class="container-fluid no-left-padding no-right-padding page-banner gallery-masonry-banner">
+    
+  <div class="container">
+    <h3 class="tc_white">FREQUENTLY ASKED QUESTIONS</h3>
+    <ol class="breadcrumb">
+      <li><a class="tc_white tc_white_h" href="#"></a></li>
+      <!-- <li class="active tc_white"></li> -->
+    </ol>
+  </div>
+</div>
+
+
+         <%= form_for @faq do |form| %>
+            <%# byebug %>
+                  <div class="field">
+                    <%= form.label :question %>
+                    <%= form.text_field :question, class: "form-control" %>
+                  </div>
+
+                  <div class="field">
+                    <%= form.label :description %>
+                    <%= form.text_field :description, class: "form-control" %>
+                  </div>
+                  
+          
+                   <div class="form-group col-md-12 tc_dark">
+                  <div class="form-group col-md-12 signup-btn">
+                       <%= form.submit 'Submit', class: "btn bg_green tc_white tc_green_h bg_white_h" %>
+                  </div>
+                  </div>
+                
+                <% end %>
+

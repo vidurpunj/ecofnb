@@ -1,0 +1,40 @@
+
+<section class="hero-area">
+  <div class="hero-slides owl-carousel">
+      <!-- Single Hero Slide -->
+    <div class="single-hero-slide bg-img slide-background-overlay" style="background-image: url('https://img.freepik.com/free-photo/ecology-child-human-hands-holding-big-plant-tree-with-blurred-background-world-environment-world_33807-610.jpg?size=626&ext=jpg');">
+      <div class="container h-100">
+        <% @gallery_types.each do |g_type|%>
+            <div class="row h-100 align-items-end">
+              <div class="col-12">
+                <div class="hero-slides-content">
+                    <div class="line"></div>
+                    <h1 href="#" title="<%g_type.title%>"><%= g_type.title %></h1>
+                </div>
+              </div>
+            </div>            
+          </div>
+        <%end%>
+      </div>  
+    </div>
+</section>
+<script type="text/javascript">
+      $(document).ready(function(){
+  $(".owl-carousel").owlCarousel();
+});
+</script>
+<style type="text/css">
+  .hero-slides .single-hero-slide {
+    height: 550px !important;
+    position: relative;
+    z-index: 1;
+    padding: 0 40px 100px;
+    -webkit-transition-duration: 800ms;
+    transition-duration: 800ms;
+    overflow: visible;
+    cursor: pointer;
+}
+section.hero-area {
+    padding-bottom: 0px !important;
+}
+</style>

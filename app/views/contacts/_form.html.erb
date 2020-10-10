@@ -1,0 +1,90 @@
+<main class="site-main scrollpoint sp-effect3">
+
+    <!-- Contact content -->
+    <div class="container-fluid contact-content" style="margin: 50px;">
+        <!-- Contact Image -->
+        <div class="contact-img scrollpoint sp-effect1">
+            <img src="<%= asset_path('contact-image.jpg')%>" alt="Contact" />
+        </div><!-- Contact Image /- -->
+        <!-- Container -->
+        <div class="container">
+            <!-- Row -->
+            <div class="row">
+                <div class="col-md-offset-3 col-md-3 col-sm-6 col-xs-6">
+                    <!-- <div class="contact-detail">
+                        <h3>Our Address</h3>
+                        <div class="detail-box tcp_dark">
+                            <i class="fa fa-map-marker bg_dark2 tc_white"></i>
+                            <p><span>Our Location :</span> Jagannath Complex, First Floor, Nainital Road Haldwani
+                            </p>
+                        </div>
+                        <div class="detail-box tcp_dark">
+                            <i class="fa fa-phone bg_dark2 tc_white"></i>
+                            <p><span>Our Contacts :</span> (+91) 7078877002</p>
+                        </div>
+                        <div class="detail-box tcp_dark captilization">
+                            <i class="fa fa-envelope-o bg_dark2 tc_white"></i>
+                            <p><span>Our Email :</span> <a class="tc_dark tc_green_h" href="mailto:info@ecofnb.com">info@ecofnb.com, ecofnb18@gmail.com</a></p>
+                        </div>
+                        <ul>
+                            <li><a class="tc_dark bg_green_h tc_white_h" target="_blank" href="https://www.facebook.com/Ecofnb-1591258727642130/?modal=admin_todo_tour"><i class="fa fa-facebook"></i></a></li>
+                            <li><a class="tc_dark bg_green_h tc_white_h" target="_blank" href="https://twitter.com/ecofnb"><i class="fa fa-twitter"></i></a></li>
+                            <li><a class="tc_dark bg_green_h tc_white_h" target="_blank" href="https://www.instagram.com/ecofnb/"><i class="fa fa-instagram"></i></a></li>
+                            <li><a class="tc_dark bg_green_h tc_white_h" target="_blank" href="https://www.youtube.com/channel/UC8rgXc5jzlLGIZyDbg2vYBg"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div> -->
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 contact-form">
+                    <h2 style="margin-bottom: 20px !important ;">Enquire Us</h2>
+                    <%= form_with(model: contact, local: true) do |form| %>
+                        <% if contact.errors.any? %>
+                          <div id="error_explanation">
+                            <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+                            <ul>
+                            <% contact.errors.full_messages.each do |message| %>
+                              <li><%= message %></li>
+                            <% end %>
+                            </ul>
+                          </div>
+                        <% end %>
+
+                   <div class="row">
+                    <div class="col-md-6 form-group">
+                     <%= form.text_field :first_name, class: "form-control tc_dove_gray" , :placeholder=>"First Name" %>
+
+                 </div>
+                         
+                    <div class="col-md-6 form-group">
+                     <%= form.text_field :last_name, class: "form-control tc_dove_gray" , :placeholder=>"Last Name" %>
+                 </div>
+                         
+                     <div class="col-md-6 form-group">
+                     <%= form.text_field :email, class: "form-control tc_dove_gray" , :placeholder=>"Email" %>
+                    </div>
+
+                     <div class="col-md-6 form-group">
+                     <%= form.text_field :website, class: "form-control tc_dove_gray" , :placeholder=>"website" %>
+                    </div>
+
+
+                     <div class="col-md-12 form-group">
+                     <%= form.text_area :message, class: "form-control tc_dove_gray" , :placeholder=>"message" %>
+                    </div>
+                 
+                  <div class="col-md-12 form-group">
+                    <%= form.submit 'Submit', class: "btn btn-success" %>
+                  </div>
+                 
+         <% end %>
+                
+            </div><!-- Row /- -->
+        </div><!-- Container /- -->
+    </div>
+</main>
+<style type="text/css">
+  .tc_dove_gray {
+    font-size: 1.5rem;
+    color: black !important;
+  }
+</style>

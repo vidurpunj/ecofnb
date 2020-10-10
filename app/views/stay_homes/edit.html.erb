@@ -1,0 +1,12 @@
+<%= render 'form', stay_home: @stay_home %>
+
+<script type="text/javascript">
+$(document).ready(function() {
+$('#dropdown').select2();
+var aa = <%= raw @stay_home.stayhome_facilities.map(&:facility_id).to_json
+ %>;
+ console.log(aa)
+$('#dropdown').val(aa); // Select the option with a value of '1'
+$('#dropdown').trigger('change');
+});
+</script>
